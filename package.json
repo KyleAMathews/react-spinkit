@@ -1,25 +1,37 @@
 {
   "name": "react-spinkit",
-  "version": "0.0.0",
   "description": "A collection of loading indicators animated with CSS for React",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/KyleAMathews/react-spinkit/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KyleAMathews/react-spinkit.git"
+  "devDependencies": {
+    "cjsx-loader": "^0.2.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-react": "^0.5.0",
+    "coffee-script": "^1.7.1",
+    "css-loader": "^0.7.1",
+    "style-loader": "^0.6.4",
+    "webpack": "^1.3.3-beta1"
   },
+  "homepage": "https://github.com/KyleAMathews/react-spinkit",
   "keywords": [
     "react",
     "react-component",
     "spinners",
     "spinkit"
   ],
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KyleAMathews/react-spinkit/issues"
+  "main": "dist/index.js",
+  "peerDependencies": {
+    "react": ">=0.11.0"
   },
-  "homepage": "https://github.com/KyleAMathews/react-spinkit"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KyleAMathews/react-spinkit.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

@@ -1,0 +1,29 @@
+BIN = ./node_modules/.bin
+
+release-patch:
+	@$(call release,patch)
+
+release-minor:
+	@$(call release,minor)
+
+release-major:
+	@$(call release,major)
+
+build:
+	@$(BIN)/cjsx -cb -o dist cjsx/index.cjsx
+	#@$(BIN)/browserify examples/index.js -o examples/bundle.js
+
+publish:
+	git push --tags origin HEAD:master
+	@$(BIN)/cjsx -cb -o dist cjsx/index.cjsx
+	npm publish
+
+publish-gh-pages:
+	git checkout gh-pages
+	git merge master
+	git push
+	git checkout master
+
+define release
+	npm version $(1)
+endef
