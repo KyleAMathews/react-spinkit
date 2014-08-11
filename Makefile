@@ -21,7 +21,11 @@ publish:
 publish-gh-pages:
 	git checkout gh-pages
 	git merge master
-	git push
+	webpack
+	cp examples/* .
+	git add --all .
+	git commit -m "New release"
+	git push origin gh-pages
 	git checkout master
 
 define release
