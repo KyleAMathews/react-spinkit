@@ -8,7 +8,7 @@ module.exports = React.createClass
         require '../css/three-bounce.css'
         return (
           @transferPropsTo(
-            <div className="spinner">
+            <div className="spinner three-bounce">
               <div className="bounce1"></div>
               <div className="bounce2"></div>
               <div className="bounce3"></div>
