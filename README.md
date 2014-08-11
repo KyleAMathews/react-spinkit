@@ -5,7 +5,7 @@ A collection of loading indicators animated with CSS for React
 
 Currently I've transcribed one spinner animation from
 [Spinkit](https://github.com/tobiasahlin/SpinKit) with more to follow!
-Pull request welcome if you're favorite spinner isn't included.
+Pull request welcome if you're favorite spinner isn't included. I'm also welcome to other classy css spinners not from Spinkit.
 
 You're currently required to use [Webpack](http://webpack.github.io) to build your project
 as this component takes advantage of [Webpack's css
