@@ -1,0 +1,25 @@
+{
+  "name": "react-spinkit",
+  "version": "0.0.0",
+  "description": "A collection of loading indicators animated with CSS for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KyleAMathews/react-spinkit.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "spinners",
+    "spinkit"
+  ],
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyleAMathews/react-spinkit/issues"
+  },
+  "homepage": "https://github.com/KyleAMathews/react-spinkit"
+}
