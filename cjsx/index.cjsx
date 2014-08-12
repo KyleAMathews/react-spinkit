@@ -61,3 +61,15 @@ module.exports = React.createClass
             </div>
           )
         )
+
+      when "wandering-cubes"
+        if @props.cssRequire
+          require '../css/wandering-cubes.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner wandering-cubes">
+              <div className="cube1"></div>
+              <div className="cube2"></div>
+            </div>
+          )
+        )

@@ -8,19 +8,29 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
       Spinner({spinnerName: 'three-bounce', cssRequire: true}),
+
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='double-bounce' />"),
       React.DOM.br(),
       React.DOM.br(),
       Spinner({spinnerName: 'double-bounce', cssRequire: true}),
+
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='rotating-plane' />"),
       React.DOM.br(),
       React.DOM.br(),
       Spinner({spinnerName: 'rotating-plane', cssRequire: true}),
+
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='wave' />"),
       React.DOM.br(),
       React.DOM.br(),
       Spinner({spinnerName: 'wave', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='wandering-cubes' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'wandering-cubes', cssRequire: true}),
+
     ]), document.body);
