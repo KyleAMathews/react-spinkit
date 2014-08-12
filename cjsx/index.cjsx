@@ -46,3 +46,18 @@ module.exports = React.createClass
             <div className="spinner rotating-plane"></div>
           )
         )
+
+      when "wave"
+        if @props.cssRequire
+          require '../css/wave.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner wave">
+              <div className="rect1"></div>
+              <div className="rect2"></div>
+              <div className="rect3"></div>
+              <div className="rect4"></div>
+              <div className="rect5"></div>
+            </div>
+          )
+        )

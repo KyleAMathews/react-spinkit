@@ -18,4 +18,9 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
       Spinner({spinnerName: 'rotating-plane', cssRequire: true}),
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='wave' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'wave', cssRequire: true}),
     ]), document.body);
