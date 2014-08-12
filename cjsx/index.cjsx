@@ -1,6 +1,8 @@
 React = require 'react'
 
 module.exports = React.createClass
+  displayName: "SpinKit—#{@props.spinnerName}"
+
   propTypes:
     spinnerName: React.PropTypes.string.isRequired
 
