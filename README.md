@@ -10,7 +10,7 @@ Currently I've ported all the spinner animations from
 ## CSS
 If you use [Webpack](http://webpack.github.io) and the
 [css-loader](https://github.com/webpack/css-loader) to build your project, then the
-css for each spinner is automatically required.
+css for each spinner is automatically required (by adding `cssRequire` as a prop).
 
 Otherwise, you'll need to include the necessary css for each spinner you
 use from `/css`.
