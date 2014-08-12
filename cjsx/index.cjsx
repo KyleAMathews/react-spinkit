@@ -13,6 +13,7 @@ module.exports = React.createClass
 
   render: ->
     switch @props.spinnerName
+
       when "three-bounce"
         if @props.cssRequire
           require '../css/three-bounce.css'
