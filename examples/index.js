@@ -33,4 +33,45 @@ React.renderComponent(
       React.DOM.br(),
       Spinner({spinnerName: 'wandering-cubes', cssRequire: true}),
 
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='pulse' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'pulse', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='chasing-dots' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'chasing-dots', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='circle' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'circle', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='cube-grid' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'cube-grid', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='wordpress' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'wordpress', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.code(null, "<Spinner spinnerName='fading-circle' />"),
+      React.DOM.br(),
+      React.DOM.br(),
+      Spinner({spinnerName: 'fading-circle', cssRequire: true}),
+
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.br(),
     ]), document.body);

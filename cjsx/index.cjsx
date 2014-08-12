@@ -73,3 +73,98 @@ module.exports = React.createClass
             </div>
           )
         )
+
+      when "pulse"
+        if @props.cssRequire
+          require '../css/pulse.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner pulse" />
+          )
+        )
+
+      when "chasing-dots"
+        if @props.cssRequire
+          require '../css/chasing-dots.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner chasing-dots">
+              <div className="dot1"></div>
+              <div className="dot2"></div>
+            </div>
+          )
+        )
+
+      when "circle"
+        if @props.cssRequire
+          require '../css/circle.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner circle-wrapper">
+              <div className="circle1 circle"></div>
+              <div className="circle2 circle"></div>
+              <div className="circle3 circle"></div>
+              <div className="circle4 circle"></div>
+              <div className="circle5 circle"></div>
+              <div className="circle6 circle"></div>
+              <div className="circle7 circle"></div>
+              <div className="circle8 circle"></div>
+              <div className="circle9 circle"></div>
+              <div className="circle10 circle"></div>
+              <div className="circle11 circle"></div>
+              <div className="circle12 circle"></div>
+            </div>
+          )
+        )
+
+      when "cube-grid"
+        if @props.cssRequire
+          require '../css/cube-grid.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner cube-grid">
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+              <div className="cube"></div>
+            </div>
+          )
+        )
+
+      when "wordpress"
+        if @props.cssRequire
+          require '../css/wordpress.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner wordpress">
+              <span className="inner-circle"></span>
+            </div>
+          )
+        )
+
+      when "fading-circle"
+        if @props.cssRequire
+          require '../css/fading-circle.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner fading-circle">
+              <div className="circle1 circle"></div>
+              <div className="circle2 circle"></div>
+              <div className="circle3 circle"></div>
+              <div className="circle4 circle"></div>
+              <div className="circle5 circle"></div>
+              <div className="circle6 circle"></div>
+              <div className="circle7 circle"></div>
+              <div className="circle8 circle"></div>
+              <div className="circle9 circle"></div>
+              <div className="circle10 circle"></div>
+              <div className="circle11 circle"></div>
+              <div className="circle12 circle"></div>
+            </div>
+          )
+        )
