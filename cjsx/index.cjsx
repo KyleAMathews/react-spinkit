@@ -1,15 +1,21 @@
 React = require 'react'
 
 module.exports = React.createClass
-  displayName: "SpinKit—#{@props.spinnerName}"
+  displayName: "SpinKit"
+
+  getDefaultProps: ->
+    cssRequire: false
+    spinnerName: 'three-bounce'
 
   propTypes:
+    cssRequire: React.PropTypes.bool
     spinnerName: React.PropTypes.string.isRequired
 
   render: ->
     switch @props.spinnerName
       when "three-bounce"
-        require '../css/three-bounce.css'
+        if @props.cssRequire
+          require '../css/three-bounce.css'
         return (
           @transferPropsTo(
             <div className="spinner three-bounce">
