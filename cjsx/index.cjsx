@@ -1,6 +1,8 @@
 React = require 'react'
 
 module.exports = React.createClass
+  propTypes:
+    spinnerName: React.PropTypes.string.isRequired
 
   render: ->
     switch @props.spinnerName
