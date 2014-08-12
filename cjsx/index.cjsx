@@ -25,3 +25,15 @@ module.exports = React.createClass
             </div>
           )
         )
+
+      when "double-bounce"
+        if @props.cssRequire
+          require '../css/double-bounce.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner double-bounce">
+              <div className="double-bounce1"></div>
+              <div className="double-bounce2"></div>
+            </div>
+          )
+        )

@@ -1,4 +1,4 @@
-.spinner > div {
+.three-bounce > div {
   width: 18px;
   height: 18px;
   background-color: #333;
@@ -12,12 +12,12 @@
   animation-fill-mode: both;
 }
 
-.spinner .bounce1 {
+.three-bounce .bounce1 {
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 
-.spinner .bounce2 {
+.three-bounce .bounce2 {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
