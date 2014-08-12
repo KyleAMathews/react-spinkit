@@ -4,9 +4,8 @@ react-spinkit
 A collection of loading indicators animated with CSS for React
 
 Currently I've ported all the spinner animations from
-[Spinkit](https://github.com/tobiasahlin/SpinKit).
-
-If you have a favorite css spinner you'd like to include, open an issue.
+[Spinkit](https://github.com/tobiasahlin/SpinKit). If you have other favorite
+ css spinner you'd like to include, open an issue.
 
 ## CSS
 If you use [Webpack](http://webpack.github.io) and the
