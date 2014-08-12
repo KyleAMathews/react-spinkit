@@ -4,6 +4,12 @@ var React = require('react');
 React.renderComponent(
   React.DOM.div({style:{margin:'0 auto', width: '400px'}},
     [
+      React.DOM.h1(null, "React-Spinkit"),
+      React.DOM.a({href:"https://github.com/KyleAMathews/react-spinkit"}, "Browse code on Github"),
+      React.DOM.br(),
+      React.DOM.br(),
+      React.DOM.br(),
+
       React.DOM.code(null, "<Spinner spinnerName='three-bounce' />"),
       React.DOM.br(),
       React.DOM.br(),
