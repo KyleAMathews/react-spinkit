@@ -37,3 +37,12 @@ module.exports = React.createClass
             </div>
           )
         )
+
+      when "rotating-plane"
+        if @props.cssRequire
+          require '../css/rotating-plane.css'
+        return (
+          @transferPropsTo(
+            <div className="spinner rotating-plane"></div>
+          )
+        )
