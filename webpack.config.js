@@ -16,6 +16,9 @@ module.exports = {
 	resolve: {
 		extensions: ['', '.js', '.cjsx', '.coffee']
 	},
+  plugins: [
+    new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'})
+  ],
 	module: {
 		loaders: [
       { test: /\.css$/, loaders: ['style', 'css']},
