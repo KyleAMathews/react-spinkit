@@ -1,4 +1,4 @@
-var Spinner = require('../cjsx/index');
+var Spinner = require('../src/index');
 var React = require('react');
 
 React.renderComponent(

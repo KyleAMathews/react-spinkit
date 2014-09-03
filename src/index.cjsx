@@ -1,4 +1,4 @@
-React = require 'react'
+React = require 'react/addons'
 
 module.exports = React.createClass
   displayName: "SpinKit"
@@ -6,12 +6,24 @@ module.exports = React.createClass
   getDefaultProps: ->
     cssRequire: false
     spinnerName: 'three-bounce'
+    fadeIn: false
 
   propTypes:
-    cssRequire: React.PropTypes.bool
+    cssRequire: React.PropTypes.bool.isRequired
     spinnerName: React.PropTypes.string.isRequired
+    fadeIn: React.PropTypes.bool.isRequired
 
   render: ->
+    cx = React.addons.classSet
+    classes = cx({
+      spinner: true
+      "fade-in": @props.fadeIn
+    })
+
+    # Require the fade-in css.
+    if @props.cssRequire and @props.fadeIn
+      require '../css/fade-in.css'
+
     switch @props.spinnerName
 
       when "three-bounce"
@@ -19,7 +31,7 @@ module.exports = React.createClass
           require '../css/three-bounce.css'
         return (
           @transferPropsTo(
-            <div className="spinner three-bounce">
+            <div className={classes + " three-bounce"}>
               <div className="bounce1"></div>
               <div className="bounce2"></div>
               <div className="bounce3"></div>
@@ -32,7 +44,7 @@ module.exports = React.createClass
           require '../css/double-bounce.css'
         return (
           @transferPropsTo(
-            <div className="spinner double-bounce">
+            <div className={classes + " double-bounce"}>
               <div className="double-bounce1"></div>
               <div className="double-bounce2"></div>
             </div>
@@ -44,7 +56,7 @@ module.exports = React.createClass
           require '../css/rotating-plane.css'
         return (
           @transferPropsTo(
-            <div className="spinner rotating-plane"></div>
+            <div className={classes + " rotating-plane"}></div>
           )
         )
 
@@ -53,7 +65,7 @@ module.exports = React.createClass
           require '../css/wave.css'
         return (
           @transferPropsTo(
-            <div className="spinner wave">
+            <div className={classes + " wave"}>
               <div className="rect1"></div>
               <div className="rect2"></div>
               <div className="rect3"></div>
@@ -68,7 +80,7 @@ module.exports = React.createClass
           require '../css/wandering-cubes.css'
         return (
           @transferPropsTo(
-            <div className="spinner wandering-cubes">
+            <div className={classes + " wandering-cubes"}>
               <div className="cube1"></div>
               <div className="cube2"></div>
             </div>
@@ -80,7 +92,7 @@ module.exports = React.createClass
           require '../css/pulse.css'
         return (
           @transferPropsTo(
-            <div className="spinner pulse" />
+            <div className={classes + " pulse"} />
           )
         )
 
@@ -89,7 +101,7 @@ module.exports = React.createClass
           require '../css/chasing-dots.css'
         return (
           @transferPropsTo(
-            <div className="spinner chasing-dots">
+            <div className={classes + " chasing-dots"}>
               <div className="dot1"></div>
               <div className="dot2"></div>
             </div>
@@ -101,7 +113,7 @@ module.exports = React.createClass
           require '../css/circle.css'
         return (
           @transferPropsTo(
-            <div className="spinner circle-wrapper">
+            <div className={classes + " circle-wrapper"}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>
@@ -123,7 +135,7 @@ module.exports = React.createClass
           require '../css/cube-grid.css'
         return (
           @transferPropsTo(
-            <div className="spinner cube-grid">
+            <div className={classes + " cube-grid"}>
               <div className="cube"></div>
               <div className="cube"></div>
               <div className="cube"></div>
@@ -142,7 +154,7 @@ module.exports = React.createClass
           require '../css/wordpress.css'
         return (
           @transferPropsTo(
-            <div className="spinner wordpress">
+            <div className={classes + " wordpress"}>
               <span className="inner-circle"></span>
             </div>
           )
@@ -153,7 +165,7 @@ module.exports = React.createClass
           require '../css/fading-circle.css'
         return (
           @transferPropsTo(
-            <div className="spinner fading-circle">
+            <div className={classes + " fading-circle"}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>
