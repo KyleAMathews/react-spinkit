@@ -1,7 +1,7 @@
 {
   "name": "react-spinkit",
   "description": "A collection of loading indicators animated with CSS for React",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
     "url": "https://github.com/KyleAMathews/react-spinkit/issues"
