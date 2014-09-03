@@ -16,9 +16,9 @@ Otherwise, you'll need to include the necessary css for each spinner you
 use from `/css`.
 
 ## Fade in spinners after one second
-According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/), feedback after operations aren't
-needed for about a second. You can set your spinner to only appear after
-a second by adding the `fadeIn` prop e.g. `<Spinner
+According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/),
+ feedback after user operations aren't necessary for about a second.
+ You can set your spinner to fade in by adding the `fadeIn` prop e.g. `<Spinner
 spinnerName='three-bounce' fadeIn />`
 
 This requires `./css/fade-in.css` to be included either automatically
