@@ -7,6 +7,15 @@ Currently I've ported all the spinner animations from
 [Spinkit](https://github.com/tobiasahlin/SpinKit). If you have other favorite
  css spinner you'd like to include, open an issue.
 
+## Usage
+```javascript
+var Spinner = require('react-spinkit');
+
+<Spinner spinnerName='double-bounce' />
+```
+
+See more examples on the [demo page](http://kyleamathews.github.io/react-spinkit/).
+
 ## CSS
 If you use [Webpack](http://webpack.github.io) and the
 [css-loader](https://github.com/webpack/css-loader) to build your project, then the
