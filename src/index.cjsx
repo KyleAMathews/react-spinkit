@@ -30,8 +30,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/three-bounce.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " three-bounce"}>
+          (
+            <div className={classes + " three-bounce"} {... @props}>
               <div className="bounce1"></div>
               <div className="bounce2"></div>
               <div className="bounce3"></div>
@@ -43,8 +43,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/double-bounce.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " double-bounce"}>
+          (
+            <div className={classes + " double-bounce"} {... @props}>
               <div className="double-bounce1"></div>
               <div className="double-bounce2"></div>
             </div>
@@ -55,8 +55,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/rotating-plane.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " rotating-plane"}></div>
+          (
+            <div className={classes + " rotating-plane"} {... @props}></div>
           )
         )
 
@@ -64,8 +64,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/wave.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " wave"}>
+          (
+            <div className={classes + " wave"} {... @props}>
               <div className="rect1"></div>
               <div className="rect2"></div>
               <div className="rect3"></div>
@@ -79,8 +79,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/wandering-cubes.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " wandering-cubes"}>
+          (
+            <div className={classes + " wandering-cubes"} {... @props}>
               <div className="cube1"></div>
               <div className="cube2"></div>
             </div>
@@ -91,8 +91,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/pulse.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " pulse"} />
+          (
+            <div className={classes + " pulse"} {... @props} />
           )
         )
 
@@ -100,8 +100,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/chasing-dots.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " chasing-dots"}>
+          (
+            <div className={classes + " chasing-dots"} {... @props}>
               <div className="dot1"></div>
               <div className="dot2"></div>
             </div>
@@ -112,8 +112,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/circle.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " circle-wrapper"}>
+          (
+            <div className={classes + " circle-wrapper"} {... @props}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>
@@ -134,8 +134,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/cube-grid.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " cube-grid"}>
+          (
+            <div className={classes + " cube-grid"} {... @props}>
               <div className="cube"></div>
               <div className="cube"></div>
               <div className="cube"></div>
@@ -153,8 +153,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/wordpress.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " wordpress"}>
+          (
+            <div className={classes + " wordpress"} {... @props}>
               <span className="inner-circle"></span>
             </div>
           )
@@ -164,8 +164,8 @@ module.exports = React.createClass
         if @props.cssRequire
           require '../css/fading-circle.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " fading-circle"}>
+          (
+            <div className={classes + " fading-circle"} {... @props}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>
