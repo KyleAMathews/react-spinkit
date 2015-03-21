@@ -3,13 +3,16 @@
   "description": "A collection of loading indicators animated with CSS for React",
   "version": "0.6.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/KyleAMathews/react-spinkit/issues"
-  },
   "browserify": {
     "transform": [
       "cssify"
     ]
+  },
+  "bugs": {
+    "url": "https://github.com/KyleAMathews/react-spinkit/issues"
+  },
+  "dependencies": {
+    "cssify": "^0.7.0"
   },
   "devDependencies": {
     "cjsx-loader": "^2.0.1",
@@ -24,8 +27,8 @@
   "keywords": [
     "react",
     "react-component",
-    "spinners",
-    "spinkit"
+    "spinkit",
+    "spinners"
   ],
   "license": "MIT",
   "main": "dist/index.js",
@@ -38,8 +41,5 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "cssify": "^0.7.0"
   }
 }
