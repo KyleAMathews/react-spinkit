@@ -17,23 +17,19 @@ var Spinner = require('react-spinkit');
 See more examples on the [demo page](http://kyleamathews.github.io/react-spinkit/).
 
 ## CSS
-CSS is loaded automatically using [Webpack](http://webpack.github.io) and the
+CSS is loaded automatically when using [Webpack](http://webpack.github.io) and the
 [css-loader](https://github.com/webpack/css-loader) or Browserify/[CSSify](https://github.com/davidguttman/cssify)
  to build your project.
 
 ## Webpack or Browserify is required
 Currently we only support Browserify and Webpack. If you'd like support
-for other build tools that also support requring CSS, PRs are welcome.
+for other build tools that also support requiring CSS, PRs are welcome.
 
 ## Fade in spinners after one second
 According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/),
  feedback after user operations isn't necessary for about a second.
  You can set your spinner to fade in by adding the `fadeIn` prop e.g. `<Spinner
 spinnerName='three-bounce' fadeIn />`
-
-This requires `./css/fade-in.css` to be included either automatically
-with Webpack or manually.
-
 
 ## Demo and documentation
 http://kyleamathews.github.io/react-spinkit/

@@ -6,12 +6,10 @@ module.exports = React.createClass
   displayName: "SpinKit"
 
   getDefaultProps: ->
-    cssRequire: false
     spinnerName: 'three-bounce'
     fadeIn: false
 
   propTypes:
-    cssRequire: React.PropTypes.bool.isRequired
     spinnerName: React.PropTypes.string.isRequired
     fadeIn: React.PropTypes.bool.isRequired
 
@@ -24,14 +22,13 @@ module.exports = React.createClass
     if @props.className then classes = classes + " " + @props.className
 
     # Require the fade-in css.
-    if @props.cssRequire and @props.fadeIn
+    if @props.fadeIn
       require '../css/fade-in.css'
 
     switch @props.spinnerName
 
       when "three-bounce"
-        if @props.cssRequire
-          require '../css/three-bounce.css'
+        require '../css/three-bounce.css'
         return (
           (
             <div {... @props} className={classes + " three-bounce"}>
@@ -43,8 +40,7 @@ module.exports = React.createClass
         )
 
       when "double-bounce"
-        if @props.cssRequire
-          require '../css/double-bounce.css'
+        require '../css/double-bounce.css'
         return (
           (
             <div {... @props} className={classes + " double-bounce"}>
@@ -55,8 +51,7 @@ module.exports = React.createClass
         )
 
       when "rotating-plane"
-        if @props.cssRequire
-          require '../css/rotating-plane.css'
+        require '../css/rotating-plane.css'
         return (
           (
             <div {... @props} className={classes + " rotating-plane"}></div>
@@ -64,8 +59,7 @@ module.exports = React.createClass
         )
 
       when "wave"
-        if @props.cssRequire
-          require '../css/wave.css'
+        require '../css/wave.css'
         return (
           (
             <div {... @props} className={classes + " wave"}>
@@ -79,8 +73,7 @@ module.exports = React.createClass
         )
 
       when "wandering-cubes"
-        if @props.cssRequire
-          require '../css/wandering-cubes.css'
+        require '../css/wandering-cubes.css'
         return (
           (
             <div {... @props} className={classes + " wandering-cubes"}>
@@ -91,8 +84,7 @@ module.exports = React.createClass
         )
 
       when "pulse"
-        if @props.cssRequire
-          require '../css/pulse.css'
+        require '../css/pulse.css'
         return (
           (
             <div {... @props} className={classes + " pulse"} />
@@ -100,8 +92,7 @@ module.exports = React.createClass
         )
 
       when "chasing-dots"
-        if @props.cssRequire
-          require '../css/chasing-dots.css'
+        require '../css/chasing-dots.css'
         return (
           (
             <div {... @props} className={classes + " chasing-dots"}>
@@ -112,8 +103,7 @@ module.exports = React.createClass
         )
 
       when "circle"
-        if @props.cssRequire
-          require '../css/circle.css'
+        require '../css/circle.css'
         return (
           (
             <div {... @props} className={classes + " circle-wrapper"}>
@@ -134,8 +124,7 @@ module.exports = React.createClass
         )
 
       when "cube-grid"
-        if @props.cssRequire
-          require '../css/cube-grid.css'
+        require '../css/cube-grid.css'
         return (
           (
             <div {... @props} className={classes + " cube-grid"}>
@@ -153,8 +142,7 @@ module.exports = React.createClass
         )
 
       when "wordpress"
-        if @props.cssRequire
-          require '../css/wordpress.css'
+        require '../css/wordpress.css'
         return (
           (
             <div {... @props} className={classes + " wordpress"}>
@@ -164,8 +152,7 @@ module.exports = React.createClass
         )
 
       when "fading-circle"
-        if @props.cssRequire
-          require '../css/fading-circle.css'
+        require '../css/fading-circle.css'
         return (
           (
             <div {... @props} className={classes + " fading-circle"}>
