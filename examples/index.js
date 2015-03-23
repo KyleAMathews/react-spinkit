@@ -1,7 +1,7 @@
-var Spinner = require('../src/index');
 var React = require('react');
+var Spinner = React.createFactory(require('../src/index'));
 
-React.renderComponent(
+React.render(
   React.DOM.div({style:{margin:'0 auto', width: '400px'}},
     [
       React.DOM.h1(null, "React-Spinkit"),
@@ -10,71 +10,71 @@ React.renderComponent(
       React.DOM.br(),
       React.DOM.br(),
 
-      React.DOM.code(null, "<Spinner spinnerName='three-bounce' />"),
+      React.DOM.code(null, "<Spinner spinnerName='three-bounce' fadeIn />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'three-bounce', cssRequire: true}),
+      Spinner({spinnerName: 'three-bounce'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='double-bounce' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'double-bounce', cssRequire: true}),
+      Spinner({spinnerName: 'double-bounce'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='rotating-plane' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'rotating-plane', cssRequire: true}),
+      Spinner({spinnerName: 'rotating-plane'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='wave' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'wave', cssRequire: true}),
+      Spinner({spinnerName: 'wave'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='wandering-cubes' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'wandering-cubes', cssRequire: true}),
+      Spinner({spinnerName: 'wandering-cubes'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='pulse' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'pulse', cssRequire: true}),
+      Spinner({spinnerName: 'pulse'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='chasing-dots' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'chasing-dots', cssRequire: true}),
+      Spinner({spinnerName: 'chasing-dots'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='circle' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'circle', cssRequire: true}),
+      Spinner({spinnerName: 'circle'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='cube-grid' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'cube-grid', cssRequire: true}),
+      Spinner({spinnerName: 'cube-grid'}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='wordpress' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'wordpress', cssRequire: true}),
+      Spinner({spinnerName: 'wordpress'}),
 
       React.DOM.br(),
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='fading-circle' />"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'fading-circle', cssRequire: true}),
+      Spinner({spinnerName: 'fading-circle'}),
 
       React.DOM.br(),
       React.DOM.br(),

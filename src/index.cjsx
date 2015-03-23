@@ -1,37 +1,37 @@
-React = require 'react/addons'
+React = require 'react'
+cx = require 'classnames'
+objectAssign = require 'react/lib/Object.assign'
 
 module.exports = React.createClass
   displayName: "SpinKit"
 
   getDefaultProps: ->
-    cssRequire: false
     spinnerName: 'three-bounce'
-    fadeIn: false
+    noFadeIn: false
 
   propTypes:
-    cssRequire: React.PropTypes.bool.isRequired
     spinnerName: React.PropTypes.string.isRequired
-    fadeIn: React.PropTypes.bool.isRequired
+    noFadeIn: React.PropTypes.bool
 
   render: ->
-    cx = React.addons.classSet
     classes = cx({
       spinner: true
-      "fade-in": @props.fadeIn
+      "fade-in": not @props.noFadeIn
     })
 
+    if @props.className then classes = classes + " " + @props.className
+
     # Require the fade-in css.
-    if @props.cssRequire and @props.fadeIn
+    unless @props.noFadeIn
       require '../css/fade-in.css'
 
     switch @props.spinnerName
 
       when "three-bounce"
-        if @props.cssRequire
-          require '../css/three-bounce.css'
+        require '../css/three-bounce.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " three-bounce"}>
+          (
+            <div {... @props} className={classes + " three-bounce"}>
               <div className="bounce1"></div>
               <div className="bounce2"></div>
               <div className="bounce3"></div>
@@ -40,11 +40,10 @@ module.exports = React.createClass
         )
 
       when "double-bounce"
-        if @props.cssRequire
-          require '../css/double-bounce.css'
+        require '../css/double-bounce.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " double-bounce"}>
+          (
+            <div {... @props} className={classes + " double-bounce"}>
               <div className="double-bounce1"></div>
               <div className="double-bounce2"></div>
             </div>
@@ -52,20 +51,18 @@ module.exports = React.createClass
         )
 
       when "rotating-plane"
-        if @props.cssRequire
-          require '../css/rotating-plane.css'
+        require '../css/rotating-plane.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " rotating-plane"}></div>
+          (
+            <div {... @props} className={classes + " rotating-plane"}></div>
           )
         )
 
       when "wave"
-        if @props.cssRequire
-          require '../css/wave.css'
+        require '../css/wave.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " wave"}>
+          (
+            <div {... @props} className={classes + " wave"}>
               <div className="rect1"></div>
               <div className="rect2"></div>
               <div className="rect3"></div>
@@ -76,11 +73,10 @@ module.exports = React.createClass
         )
 
       when "wandering-cubes"
-        if @props.cssRequire
-          require '../css/wandering-cubes.css'
+        require '../css/wandering-cubes.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " wandering-cubes"}>
+          (
+            <div {... @props} className={classes + " wandering-cubes"}>
               <div className="cube1"></div>
               <div className="cube2"></div>
             </div>
@@ -88,20 +84,18 @@ module.exports = React.createClass
         )
 
       when "pulse"
-        if @props.cssRequire
-          require '../css/pulse.css'
+        require '../css/pulse.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " pulse"} />
+          (
+            <div {... @props} className={classes + " pulse"} />
           )
         )
 
       when "chasing-dots"
-        if @props.cssRequire
-          require '../css/chasing-dots.css'
+        require '../css/chasing-dots.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " chasing-dots"}>
+          (
+            <div {... @props} className={classes + " chasing-dots"}>
               <div className="dot1"></div>
               <div className="dot2"></div>
             </div>
@@ -109,11 +103,10 @@ module.exports = React.createClass
         )
 
       when "circle"
-        if @props.cssRequire
-          require '../css/circle.css'
+        require '../css/circle.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " circle-wrapper"}>
+          (
+            <div {... @props} className={classes + " circle-wrapper"}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>
@@ -131,11 +124,10 @@ module.exports = React.createClass
         )
 
       when "cube-grid"
-        if @props.cssRequire
-          require '../css/cube-grid.css'
+        require '../css/cube-grid.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " cube-grid"}>
+          (
+            <div {... @props} className={classes + " cube-grid"}>
               <div className="cube"></div>
               <div className="cube"></div>
               <div className="cube"></div>
@@ -150,22 +142,20 @@ module.exports = React.createClass
         )
 
       when "wordpress"
-        if @props.cssRequire
-          require '../css/wordpress.css'
+        require '../css/wordpress.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " wordpress"}>
+          (
+            <div {... @props} className={classes + " wordpress"}>
               <span className="inner-circle"></span>
             </div>
           )
         )
 
       when "fading-circle"
-        if @props.cssRequire
-          require '../css/fading-circle.css'
+        require '../css/fading-circle.css'
         return (
-          @transferPropsTo(
-            <div className={classes + " fading-circle"}>
+          (
+            <div {... @props} className={classes + " fading-circle"}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>

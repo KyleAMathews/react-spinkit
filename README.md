@@ -7,23 +7,30 @@ Currently I've ported all the spinner animations from
 [Spinkit](https://github.com/tobiasahlin/SpinKit). If you have other favorite
  css spinner you'd like to include, open an issue.
 
+## Usage
+```javascript
+var Spinner = require('react-spinkit');
+
+<Spinner spinnerName='double-bounce' />
+```
+
+See more examples on the [demo page](http://kyleamathews.github.io/react-spinkit/).
+
 ## CSS
-If you use [Webpack](http://webpack.github.io) and the
-[css-loader](https://github.com/webpack/css-loader) to build your project, then the
-css for each spinner is automatically required (by adding `cssRequire` as a prop).
+CSS is loaded automatically when using [Webpack](http://webpack.github.io) and the
+[css-loader](https://github.com/webpack/css-loader) or Browserify/[CSSify](https://github.com/davidguttman/cssify)
+ to build your project.
 
-Otherwise, you'll need to include the necessary css for each spinner you
-use from `/css`.
+## Webpack or Browserify is required
+Currently we only support Browserify and Webpack. If you'd like support
+for other build tools that also support requiring CSS, PRs are welcome.
 
-## Fade in spinners after one second
-According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/), feedback after operations aren't
-needed for about a second. You can set your spinner to only appear after
-a second by adding the `fadeIn` prop e.g. `<Spinner
-spinnerName='three-bounce' fadeIn />`
-
-This requires `./css/fade-in.css` to be included either automatically
-with Webpack or manually.
-
+## Fades in spinners after one second
+According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/),
+ feedback after user operations isn't necessary for about a second so be
+default, react-spinkit will fade in your spinner at one second.
+ You can disable spinner fade in by adding the `noFadeIn` prop e.g. `<Spinner
+spinnerName='three-bounce' noFadeIn />`
 
 ## Demo and documentation
 http://kyleamathews.github.io/react-spinkit/
