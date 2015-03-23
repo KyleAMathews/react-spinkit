@@ -12,6 +12,7 @@
     "url": "https://github.com/KyleAMathews/react-spinkit/issues"
   },
   "dependencies": {
+    "classnames": "^1.2.0",
     "cssify": "^0.7.0"
   },
   "devDependencies": {
@@ -20,7 +21,7 @@
     "coffee-react": "^3.0.1",
     "coffee-script": "^1.9.1",
     "css-loader": "^0.9.1",
-    "style-loader": "^0.8.3",
+    "style-loader": "^0.9.0",
     "webpack": "^1.7.3"
   },
   "homepage": "https://github.com/KyleAMathews/react-spinkit",

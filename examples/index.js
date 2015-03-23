@@ -1,7 +1,7 @@
-var Spinner = require('../src/index');
 var React = require('react');
+var Spinner = React.createFactory(require('../src/index'));
 
-React.renderComponent(
+React.render(
   React.DOM.div({style:{margin:'0 auto', width: '400px'}},
     [
       React.DOM.h1(null, "React-Spinkit"),
