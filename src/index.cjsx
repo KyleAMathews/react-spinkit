@@ -7,22 +7,22 @@ module.exports = React.createClass
 
   getDefaultProps: ->
     spinnerName: 'three-bounce'
-    fadeIn: false
+    noFadeIn: false
 
   propTypes:
     spinnerName: React.PropTypes.string.isRequired
-    fadeIn: React.PropTypes.bool.isRequired
+    noFadeIn: React.PropTypes.bool
 
   render: ->
     classes = cx({
       spinner: true
-      "fade-in": @props.fadeIn
+      "fade-in": not @props.noFadeIn
     })
 
     if @props.className then classes = classes + " " + @props.className
 
     # Require the fade-in css.
-    if @props.fadeIn
+    unless @props.noFadeIn
       require '../css/fade-in.css'
 
     switch @props.spinnerName
