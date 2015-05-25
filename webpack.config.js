@@ -6,6 +6,10 @@ module.exports = {
   entry: [
     './examples/index'
   ],
+  devServer: {
+    contentBase: './examples/',
+    hot: true
+  },
 	output: {
     path: path.join(__dirname, 'examples'),
 		filename: 'bundle.js',

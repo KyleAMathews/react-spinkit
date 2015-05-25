@@ -5,19 +5,23 @@ objectAssign = require 'react/lib/Object.assign'
 module.exports = React.createClass
   displayName: "SpinKit"
 
-  getDefaultProps: ->
-    spinnerName: 'three-bounce'
-    noFadeIn: false
-
   propTypes:
     spinnerName: React.PropTypes.string.isRequired
     noFadeIn: React.PropTypes.bool
+    overrideSpinnerClassName: React.PropTypes.string
+
+  getDefaultProps: ->
+    spinnerName: 'three-bounce'
+    noFadeIn: false
+    overrideSpinnerClassName: false
 
   render: ->
-    classes = cx({
+    classTests = {
       "fade-in": not @props.noFadeIn
-      spinner: true
-    })
+      spinner: not @props.overrideSpinnerClassName
+    }
+    classTests[@props.overrideSpinnerClassName] = @props.overrideSpinnerClassName
+    classes = cx(classTests)
 
     if @props.className then classes = classes + " " + @props.className
 
