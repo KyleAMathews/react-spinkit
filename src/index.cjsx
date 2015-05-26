@@ -8,17 +8,17 @@ module.exports = React.createClass
   propTypes:
     spinnerName: React.PropTypes.string.isRequired
     noFadeIn: React.PropTypes.bool
-    overrideSpinnerClassName: React.PropTypes.bool
+    overrideSpinnerClassName: React.PropTypes.string
 
   getDefaultProps: ->
     spinnerName: 'three-bounce'
     noFadeIn: false
-    overrideSpinnerClassName: false
+    overrideSpinnerClassName: ""
 
   render: ->
     classTests = {
       "fade-in": not @props.noFadeIn
-      spinner: not @props.overrideSpinnerClassName
+      spinner: @props.overrideSpinnerClassName is ""
     }
     classTests[@props.overrideSpinnerClassName] = @props.overrideSpinnerClassName
     classes = cx(classTests)
