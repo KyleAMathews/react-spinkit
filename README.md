@@ -32,5 +32,10 @@ default, react-spinkit will fade in your spinner at one second.
  You can disable spinner fade in by adding the `noFadeIn` prop e.g. `<Spinner
 spinnerName='three-bounce' noFadeIn />`
 
+## PropTypes
+* **spinnerName**—specify spinner to use.
+* **noFadeIn**—disable the initial fade-in of the spinner.
+* **overrideSpinnerClassName**—change the default "spinner" className.
+
 ## Demo and documentation
 http://kyleamathews.github.io/react-spinkit/

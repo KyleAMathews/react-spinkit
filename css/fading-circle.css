@@ -52,13 +52,12 @@
 .circle11:before { animation-delay: -0.2s; -webkit-animation-delay: -0.2s }
 .circle12:before { animation-delay: -0.1s; -webkit-animation-delay: -0.1s }
 
-@-webkit-keyframes fadedelay {
-  0%, 39%, 100% { opacity: 0 }
-  40% { opacity: 1 }
-}
-
 @keyframes fadedelay {
   0%, 39%, 100% { opacity: 0 }
   40% { opacity: 0 }
 }
 
+@-webkit-keyframes fadedelay {
+  0%, 39%, 100% { opacity: 0 }
+  40% { opacity: 1 }
+}

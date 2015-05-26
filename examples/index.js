@@ -13,7 +13,7 @@ React.render(
       React.DOM.code(null, "<Spinner spinnerName='three-bounce'/>"),
       React.DOM.br(),
       React.DOM.br(),
-      Spinner({spinnerName: 'three-bounce'}),
+      Spinner({spinnerName: 'three-bounce', overrideSpinnerClassName: "sk-spinner"}),
 
       React.DOM.br(),
       React.DOM.code(null, "<Spinner spinnerName='double-bounce'/>"),
@@ -68,13 +68,6 @@ React.render(
       React.DOM.br(),
       React.DOM.br(),
       Spinner({spinnerName: 'wordpress'}),
-
-      React.DOM.br(),
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='fading-circle'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'fading-circle'}),
 
       React.DOM.br(),
       React.DOM.br(),
