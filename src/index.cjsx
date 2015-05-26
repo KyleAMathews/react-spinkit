@@ -8,7 +8,7 @@ module.exports = React.createClass
   propTypes:
     spinnerName: React.PropTypes.string.isRequired
     noFadeIn: React.PropTypes.bool
-    overrideSpinnerClassName: React.PropTypes.string
+    overrideSpinnerClassName: React.PropTypes.bool
 
   getDefaultProps: ->
     spinnerName: 'three-bounce'
