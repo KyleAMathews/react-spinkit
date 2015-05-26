@@ -71,13 +71,6 @@ React.render(
 
       React.DOM.br(),
       React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='fading-circle'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'fading-circle'}),
-
-      React.DOM.br(),
-      React.DOM.br(),
       React.DOM.br(),
       React.DOM.br(),
     ]), document.body);
