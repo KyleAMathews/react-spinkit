@@ -17,8 +17,8 @@ var Spinner = require('react-spinkit');
 See more examples on the [demo page](http://kyleamathews.github.io/react-spinkit/).
 
 ## CSS
-CSS is loaded automatically when using [Webpack](http://webpack.github.io) and the
-[css-loader](https://github.com/webpack/css-loader) or Browserify/[CSSify](https://github.com/davidguttman/cssify)
+CSS is loaded automatically when using [Webpack](http://webpack.github.io) with the
+[css-loader](https://github.com/webpack/css-loader) and [style-loader](https://github.com/webpack/style-loader), or Browserify/[CSSify](https://github.com/davidguttman/cssify)
  to build your project.
 
 ## Webpack or Browserify is required
