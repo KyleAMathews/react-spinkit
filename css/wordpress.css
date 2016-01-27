@@ -1,15 +1,15 @@
-.wordpress {
+.sk-wordpress {
   background: #333;
   width: 27px;
   height: 27px;
   display: inline-block;
   border-radius: 27px;
   position: relative;
-  -webkit-animation: inner-circle 1s linear infinite;
-  animation: inner-circle 1s linear infinite;
+  -webkit-animation: sk-inner-circle 1s linear infinite;
+  animation: sk-inner-circle 1s linear infinite;
 }
 
-.inner-circle {
+.sk-inner-circle {
   display: block;
   background: #fff;
   width: 8px;
@@ -20,12 +20,12 @@
   left: 5px;
 }
 
-@-webkit-keyframes inner-circle {
+@-webkit-keyframes sk-inner-circle {
   0% { -webkit-transform: rotate(0); }
   100% { -webkit-transform: rotate(360deg); }
 }
 
-@keyframes inner-circle {
+@keyframes sk-inner-circle {
   0% { transform: rotate(0); -webkit-transform:rotate(0); }
   100% { transform: rotate(360deg); -webkit-transform:rotate(360deg); }
 }
