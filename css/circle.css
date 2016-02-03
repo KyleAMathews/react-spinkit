@@ -18,7 +18,7 @@
   margin: 0 auto;
   width: 20%;
   height: 20%;
-  background-color: #333;
+  background-color: currentColor;
 
   border-radius: 100%;
   -webkit-animation: bouncedelay 1.2s infinite ease-in-out;

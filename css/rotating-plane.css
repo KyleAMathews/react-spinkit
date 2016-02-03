@@ -1,7 +1,7 @@
 .rotating-plane {
   width: 27px;
   height: 27px;
-  background-color: #333;
+  background-color: currentColor;
 
   -webkit-animation: rotateplane 1.2s infinite ease-in-out;
   animation: rotateplane 1.2s infinite ease-in-out;
