@@ -1,6 +1,5 @@
 React = require 'react'
 cx = require 'classnames'
-objectAssign = require 'react/lib/Object.assign'
 
 module.exports = React.createClass
   displayName: "SpinKit"
