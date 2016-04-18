@@ -12,19 +12,19 @@
     "url": "https://github.com/KyleAMathews/react-spinkit/issues"
   },
   "dependencies": {
-    "classnames": "^1.2.0"
+    "classnames": "^2.2.3"
   },
   "devDependencies": {
-    "cjsx-loader": "^2.0.1",
+    "cjsx-loader": "^3.0.0",
     "coffee-loader": "^0.7.2",
-    "coffee-react": "^3.0.1",
-    "coffee-react-transform": "^3.2.0",
-    "coffee-script": "^1.9.1",
-    "css-loader": "^0.9.1",
-    "cssify": "^0.7.0",
+    "coffee-react": "^5.0.0",
+    "coffee-react-transform": "^4.0.0",
+    "coffee-script": "^1.10.0",
+    "css-loader": "^0.23.1",
+    "cssify": "^1.0.2",
     "mkdirp": "^0.5.1",
-    "style-loader": "^0.9.0",
-    "webpack": "^1.7.3"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.0"
   },
   "homepage": "https://github.com/KyleAMathews/react-spinkit",
   "keywords": [
