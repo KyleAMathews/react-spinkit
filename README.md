@@ -27,7 +27,7 @@ for other build tools that also support requiring CSS, PRs are welcome.
 
 ## Fades in spinners after one second
 According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/),
- feedback after user operations isn't necessary for about a second so be
+ feedback after user operations isn't necessary for about a second so by
 default, react-spinkit will fade in your spinner at one second.
  You can disable spinner fade in by adding the `noFadeIn` prop e.g. `<Spinner
 spinnerName='three-bounce' noFadeIn />`
