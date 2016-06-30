@@ -10,14 +10,14 @@ module.exports = React.createClass
     overrideSpinnerClassName: React.PropTypes.string
 
   getDefaultProps: ->
-    spinnerName: 'three-bounce'
+    spinnerName: 'sk-three-bounce'
     noFadeIn: false
     overrideSpinnerClassName: ""
 
   render: ->
     classTests = {
-      "fade-in": not @props.noFadeIn
-      spinner: @props.overrideSpinnerClassName is ""
+      "sk-fade-in": not @props.noFadeIn
+      "sk-spinner": @props.overrideSpinnerClassName is ""
     }
     classTests[@props.overrideSpinnerClassName] = @props.overrideSpinnerClassName
     classes = cx(classTests)
@@ -34,10 +34,10 @@ module.exports = React.createClass
         require '../css/three-bounce.css'
         return (
           (
-            <div {... @props} className={"three-bounce " + classes}>
-              <div className="bounce1"></div>
-              <div className="bounce2"></div>
-              <div className="bounce3"></div>
+            <div {... @props} className={"sk-three-bounce " + classes}>
+              <div className="sk-bounce1"></div>
+              <div className="sk-bounce2"></div>
+              <div className="sk-bounce3"></div>
             </div>
           )
         )
@@ -46,9 +46,9 @@ module.exports = React.createClass
         require '../css/double-bounce.css'
         return (
           (
-            <div {... @props} className={"double-bounce " + classes}>
-              <div className="double-bounce1"></div>
-              <div className="double-bounce2"></div>
+            <div {... @props} className={"sk-double-bounce " + classes}>
+              <div className="sk-double-bounce1"></div>
+              <div className="sk-double-bounce2"></div>
             </div>
           )
         )
@@ -58,7 +58,7 @@ module.exports = React.createClass
         return (
           (
             <div {... @props} className={classes}>
-              <div className={"rotating-plane"}/>
+              <div className={"sk-rotating-plane"}/>
             </div>
           )
         )
@@ -67,12 +67,12 @@ module.exports = React.createClass
         require '../css/wave.css'
         return (
           (
-            <div {... @props} className={"wave " + classes}>
-              <div className="rect1"></div>
-              <div className="rect2"></div>
-              <div className="rect3"></div>
-              <div className="rect4"></div>
-              <div className="rect5"></div>
+            <div {... @props} className={"sk-wave " + classes}>
+              <div className="sk-rect1"></div>
+              <div className="sk-rect2"></div>
+              <div className="sk-rect3"></div>
+              <div className="sk-rect4"></div>
+              <div className="sk-rect5"></div>
             </div>
           )
         )
@@ -81,7 +81,7 @@ module.exports = React.createClass
         require '../css/wandering-cubes.css'
         return (
           (
-            <div {... @props} className={"wandering-cubes " + classes}>
+            <div {... @props} className={"sk-wandering-cubes " + classes}>
               <div className="cube1"></div>
               <div className="cube2"></div>
             </div>
@@ -93,7 +93,7 @@ module.exports = React.createClass
         return (
           (
             <div {... @props} className={classes}>
-              <div className="pulse" />
+              <div className="sk-pulse" />
             </div>
           )
         )
@@ -103,9 +103,9 @@ module.exports = React.createClass
         return (
           (
             <div {... @props} className={classes}>
-              <div className="chasing-dots">
-                <div className="dot1"></div>
-                <div className="dot2"></div>
+              <div className="sk-chasing-dots">
+                <div className="sk-dot1"></div>
+                <div className="sk-dot2"></div>
               </div>
             </div>
           )
@@ -115,19 +115,19 @@ module.exports = React.createClass
         require '../css/circle.css'
         return (
           (
-            <div {... @props} className={"circle-wrapper " + classes}>
-              <div className="circle1 circle"></div>
-              <div className="circle2 circle"></div>
-              <div className="circle3 circle"></div>
-              <div className="circle4 circle"></div>
-              <div className="circle5 circle"></div>
-              <div className="circle6 circle"></div>
-              <div className="circle7 circle"></div>
-              <div className="circle8 circle"></div>
-              <div className="circle9 circle"></div>
-              <div className="circle10 circle"></div>
-              <div className="circle11 circle"></div>
-              <div className="circle12 circle"></div>
+            <div {... @props} className={"sk-circle-wrapper " + classes}>
+              <div className="sk-circle1 sk-circle"></div>
+              <div className="sk-circle2 sk-circle"></div>
+              <div className="sk-circle3 sk-circle"></div>
+              <div className="sk-circle4 sk-circle"></div>
+              <div className="sk-circle5 sk-circle"></div>
+              <div className="sk-circle6 sk-circle"></div>
+              <div className="sk-circle7 sk-circle"></div>
+              <div className="sk-circle8 sk-circle"></div>
+              <div className="sk-circle9 sk-circle"></div>
+              <div className="sk-circle10 sk-circle"></div>
+              <div className="sk-circle11 sk-circle"></div>
+              <div className="sk-circle12 sk-circle"></div>
             </div>
           )
         )
@@ -136,16 +136,16 @@ module.exports = React.createClass
         require '../css/cube-grid.css'
         return (
           (
-            <div {... @props} className={"cube-grid " + classes}>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
-              <div className="cube"></div>
+            <div {... @props} className={"sk-cube-grid " + classes}>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
+              <div className="sk-cube"></div>
             </div>
           )
         )
@@ -155,8 +155,8 @@ module.exports = React.createClass
         return (
           (
             <div {... @props} className={classes}>
-              <div className="wordpress">
-                <span className="inner-circle"></span>
+              <div className="sk-wordpress">
+                <span className="sk-inner-circle"></span>
               </div>
             </div>
           )

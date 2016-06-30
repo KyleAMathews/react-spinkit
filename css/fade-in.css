@@ -1,4 +1,4 @@
-@-webkit-keyframes fade-in {
+@-webkit-keyframes sk-fade-in {
   0% {
       opacity: 0;
   }
@@ -10,7 +10,7 @@
   }
 }
 
-@-moz-keyframes fade-in {
+@-moz-keyframes sk-fade-in {
   0% {
       opacity: 0;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@-ms-keyframes fade-in {
+@-ms-keyframes sk-fade-in {
   0% {
       opacity: 0;
   }
@@ -34,7 +34,7 @@
   }
 }
 
-@keyframes fade-in {
+@keyframes sk-fade-in {
   0% {
       opacity: 0;
   }
@@ -46,9 +46,9 @@
   }
 }
 
-.fade-in {
-  -webkit-animation: fade-in 2s;
-  -moz-animation: fade-in 2s;
-  -o-animation: fade-in 2s;
-  -ms-animation: fade-in 2s;
+.sk-fade-in {
+  -webkit-animation: sk-fade-in 2s;
+  -moz-animation: sk-fade-in 2s;
+  -o-animation: sk-fade-in 2s;
+  -ms-animation: sk-fade-in 2s;
 }
