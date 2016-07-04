@@ -28,13 +28,18 @@ module.exports = React.createClass
     unless @props.noFadeIn
       require '../css/fade-in.css'
 
+    props = Object.assign({}, @props)
+    delete props.spinnerName
+    delete props.noFadeIn
+    delete props.overrideSpinnerClassName
+
     switch @props.spinnerName
 
       when "three-bounce"
         require '../css/three-bounce.css'
         return (
           (
-            <div {... @props} className={"three-bounce " + classes}>
+            <div {... props} className={"three-bounce " + classes}>
               <div className="bounce1"></div>
               <div className="bounce2"></div>
               <div className="bounce3"></div>
@@ -46,7 +51,7 @@ module.exports = React.createClass
         require '../css/double-bounce.css'
         return (
           (
-            <div {... @props} className={"double-bounce " + classes}>
+            <div {... props} className={"double-bounce " + classes}>
               <div className="double-bounce1"></div>
               <div className="double-bounce2"></div>
             </div>
@@ -57,7 +62,7 @@ module.exports = React.createClass
         require '../css/rotating-plane.css'
         return (
           (
-            <div {... @props} className={classes}>
+            <div {... props} className={classes}>
               <div className={"rotating-plane"}/>
             </div>
           )
@@ -67,7 +72,7 @@ module.exports = React.createClass
         require '../css/wave.css'
         return (
           (
-            <div {... @props} className={"wave " + classes}>
+            <div {... props} className={"wave " + classes}>
               <div className="rect1"></div>
               <div className="rect2"></div>
               <div className="rect3"></div>
@@ -81,7 +86,7 @@ module.exports = React.createClass
         require '../css/wandering-cubes.css'
         return (
           (
-            <div {... @props} className={"wandering-cubes " + classes}>
+            <div {... props} className={"wandering-cubes " + classes}>
               <div className="cube1"></div>
               <div className="cube2"></div>
             </div>
@@ -92,7 +97,7 @@ module.exports = React.createClass
         require '../css/pulse.css'
         return (
           (
-            <div {... @props} className={classes}>
+            <div {... props} className={classes}>
               <div className="pulse" />
             </div>
           )
@@ -102,7 +107,7 @@ module.exports = React.createClass
         require '../css/chasing-dots.css'
         return (
           (
-            <div {... @props} className={classes}>
+            <div {... props} className={classes}>
               <div className="chasing-dots">
                 <div className="dot1"></div>
                 <div className="dot2"></div>
@@ -115,7 +120,7 @@ module.exports = React.createClass
         require '../css/circle.css'
         return (
           (
-            <div {... @props} className={"circle-wrapper " + classes}>
+            <div {... props} className={"circle-wrapper " + classes}>
               <div className="circle1 circle"></div>
               <div className="circle2 circle"></div>
               <div className="circle3 circle"></div>
@@ -136,7 +141,7 @@ module.exports = React.createClass
         require '../css/cube-grid.css'
         return (
           (
-            <div {... @props} className={"cube-grid " + classes}>
+            <div {... props} className={"cube-grid " + classes}>
               <div className="cube"></div>
               <div className="cube"></div>
               <div className="cube"></div>
@@ -154,7 +159,7 @@ module.exports = React.createClass
         require '../css/wordpress.css'
         return (
           (
-            <div {... @props} className={classes}>
+            <div {... props} className={classes}>
               <div className="wordpress">
                 <span className="inner-circle"></span>
               </div>
