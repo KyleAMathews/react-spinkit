@@ -12,7 +12,8 @@
     "url": "https://github.com/KyleAMathews/react-spinkit/issues"
   },
   "dependencies": {
-    "classnames": "^2.2.3"
+    "classnames": "^2.2.3",
+    "object-assign": "^4.1.0"
   },
   "devDependencies": {
     "cjsx-loader": "^3.0.0",

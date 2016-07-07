@@ -1,5 +1,6 @@
 React = require 'react'
 cx = require 'classnames'
+assign = require 'object-assign'
 
 module.exports = React.createClass
   displayName: "SpinKit"
@@ -28,7 +29,7 @@ module.exports = React.createClass
     unless @props.noFadeIn
       require '../css/fade-in.css'
 
-    props = Object.assign({}, @props)
+    props = assign({}, @props)
     delete props.spinnerName
     delete props.noFadeIn
     delete props.overrideSpinnerClassName
