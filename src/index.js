@@ -25,6 +25,11 @@ export default class Spinner extends React.Component {
 			[this.props.className]: !!this.props.className,
 		});
 
+		let props = assign({}, this.props);
+		delete props.spinnerName;
+		delete props.noFadeIn;
+		delete props.overrideSpinnerClassName;
+
 		if (!this.props.noFadeIn) {
 			require('../css/fade-in.css');
 		}
@@ -33,7 +38,7 @@ export default class Spinner extends React.Component {
 			case "three-bounce":
 				require('../css/three-bounce.css');
 				return (
-					<div className={'three-bounce ' + classes}>
+					<div {...props} className={'three-bounce ' + classes}>
 						<div className="bounce1"></div>
 						<div className="bounce2"></div>
 						<div className="bounce3"></div>
@@ -42,7 +47,7 @@ export default class Spinner extends React.Component {
 			case "double-bounce":
 				require('../css/double-bounce.css');
 				return (
-					<div className={'double-bounce ' + classes}>
+					<div {...props} className={'double-bounce ' + classes}>
 						<div className="double-bounce1"></div>
 						<div className="double-bounce2"></div>
 					</div>
@@ -50,14 +55,14 @@ export default class Spinner extends React.Component {
 			case "rotating-plane":
 				require('../css/rotating-plane.css');
 				return (
-					<div className={classes}>
+					<div {...props} className={classes}>
 						<div className="rotating-plane"></div>
 					</div>
 				);
 			case "wave":
 				require('../css/wave.css');
 				return (
-					<div className={'wave ' + classes}>
+					<div {...props} className={'wave ' + classes}>
 						<div className="rect1"></div>
 						<div className="rect2"></div>
 						<div className="rect3"></div>
@@ -68,7 +73,7 @@ export default class Spinner extends React.Component {
 			case "wandering-cubes":
 				require('../css/wandering-cubes.css');
 				return (
-					<div className={'wandering-cubes ' + classes}>
+					<div {...props} className={'wandering-cubes ' + classes}>
 						<div className="cube1"></div>
 						<div className="cube2"></div>
 					</div>
@@ -76,14 +81,14 @@ export default class Spinner extends React.Component {
 			case "pulse":
 				require('../css/pulse.css');
 				return (
-					<div className={classes}>
+					<div {...props} className={classes}>
 						<div className="pulse"></div>
 					</div>
 				);
 			case "chasing-dots":
 				require('../css/chasing-dots.css');
 				return (
-					<div className={classes}>
+					<div {...props} className={classes}>
 						<div className="chasing-dots">
 							<div className="dot1"></div>
 							<div className="dot2"></div>
@@ -93,7 +98,7 @@ export default class Spinner extends React.Component {
 			case "circle":
 				require('../css/circle.css');
 				return (
-					<div className={'circle-wrapper ' + classes}>
+					<div {...props} className={'circle-wrapper ' + classes}>
 						<div className="circle1 circle"></div>
 						<div className="circle2 circle"></div>
 						<div className="circle3 circle"></div>
@@ -111,7 +116,7 @@ export default class Spinner extends React.Component {
 			case "cube-grid":
 				require('../css/cube-grid.css');
 				return (
-					<div className={'cube-grid ' + classes}>
+					<div {...props} className={'cube-grid ' + classes}>
 						<div className="cube"></div>
 						<div className="cube"></div>
 						<div className="cube"></div>
@@ -126,7 +131,7 @@ export default class Spinner extends React.Component {
 			case "wordpress":
 				require('../css/wordpress.css');
 				return (
-					<div className={classes}>
+					<div {...props} className={classes}>
 						<div className="wordpress">
 							<div className="inner-circle"></div>
 						</div>
