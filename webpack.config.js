@@ -1,7 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 
-
 module.exports = {
   entry: [
     './examples/index'
@@ -18,15 +17,23 @@ module.exports = {
 		modulesDirectories: ['node_modules']
 	},
 	resolve: {
-		extensions: ['', '.js', '.cjsx', '.coffee']
+		extensions: ['', '.js']
 	},
   plugins: [
   ],
 	module: {
 		loaders: [
-      { test: /\.css$/, loaders: ['style', 'css']},
-      { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
-      { test: /\.coffee$/, loader: 'coffee' }
+			{
+				test: /\.css$/,
+				loaders: ['style', 'css']
+			},
+			{
+				test: /\.js$/,
+				loader: 'babel',
+				query: {
+					presets: ['es2015', 'react']
+				}
+			},
     ]
   }
 };

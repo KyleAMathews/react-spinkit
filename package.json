@@ -16,14 +16,15 @@
     "object-assign": "^4.1.0"
   },
   "devDependencies": {
-    "cjsx-loader": "^3.0.0",
-    "coffee-loader": "^0.7.2",
-    "coffee-react": "^5.0.0",
-    "coffee-react-transform": "^4.0.0",
-    "coffee-script": "^1.10.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
     "css-loader": "^0.23.1",
     "cssify": "^1.0.2",
     "mkdirp": "^0.5.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0"
   },
@@ -41,6 +42,8 @@
     "url": "https://github.com/KyleAMathews/react-spinkit.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"build": "babel src --out-dir dist/",
+		"watch": "babel -w src --out-dir dist/"
   }
 }

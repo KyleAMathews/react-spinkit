@@ -1,76 +1,83 @@
-var React = require('react');
-var Spinner = React.createFactory(require('../src/index'));
+import ReactDOM from 'react-dom';
+import React from 'react';
+import Spinner from '../dist/index.js';
 
-React.render(
-  React.DOM.div({style:{margin:'0 auto', width: '400px'}},
-    [
-      React.DOM.h1(null, "React-Spinkit"),
-      React.DOM.a({href:"https://github.com/KyleAMathews/react-spinkit"}, "Browse code on Github"),
-      React.DOM.br(),
-      React.DOM.br(),
-      React.DOM.br(),
+ReactDOM.render(
+	(
+		<div>
+			<h1>React-Spinkit</h1>
+			<a href="https://github.com/KyleAMathews/react-spinkit">Browse code on GitHub</a>
 
-      React.DOM.code(null, "<Spinner spinnerName='three-bounce'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'three-bounce', overrideSpinnerClassName: "sk-spinner"}),
+			<br /><br /><br />
+			
+			<h3>Spinner Types</h3>
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='double-bounce'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'double-bounce'}),
+			<code>&lt;Spinner spinnerName='three-bounce' /&gt;</code>
+			<Spinner spinnerName='three-bounce' />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='rotating-plane'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'rotating-plane'}),
+			<br /><br /><br />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='wave'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'wave'}),
+			<code>&lt;Spinner spinnerName='double-bounce' /&gt;</code>
+			<Spinner spinnerName='double-bounce' />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='wandering-cubes'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'wandering-cubes'}),
+			<br /><br /><br />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='pulse'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'pulse'}),
+			<code>&lt;Spinner spinnerName='rotating-plane' /&gt;</code>
+			<Spinner spinnerName='rotating-plane' />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='chasing-dots'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'chasing-dots'}),
+			<br /><br /><br />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='circle'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'circle'}),
+			<code>&lt;Spinner spinnerName='wave' /&gt;</code>
+			<Spinner spinnerName='wave' />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='cube-grid'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'cube-grid'}),
+			<br /><br /><br />
 
-      React.DOM.br(),
-      React.DOM.code(null, "<Spinner spinnerName='wordpress'/>"),
-      React.DOM.br(),
-      React.DOM.br(),
-      Spinner({spinnerName: 'wordpress'}),
+			<code>&lt;Spinner spinnerName='wandering-cubes' /&gt;</code>
+			<Spinner spinnerName='wandering-cubes' />
 
-      React.DOM.br(),
-      React.DOM.br(),
-      React.DOM.br(),
-      React.DOM.br(),
-    ]), document.body);
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='pulse' /&gt;</code>
+			<Spinner spinnerName='pulse' />
+
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='chasing-dots' /&gt;</code>
+			<Spinner spinnerName='chasing-dots' />
+
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='circle' /&gt;</code>
+			<Spinner spinnerName='circle' />
+
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='cube-grid' /&gt;</code>
+			<Spinner spinnerName='cube-grid' />
+
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='wordpress' /&gt;</code>
+			<Spinner spinnerName='wordpress' />
+
+			<br /><br /><br />
+
+			<h3>Spinner Options</h3>
+			
+			<code>&lt;Spinner spinnerName='wordpress' noFadeIn='true' /&gt;</code>
+			<Spinner spinnerName='wordpress' noFadeIn='true' />
+
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='wordpress' overrideSpinnerClassName='my-class-to-override' /&gt;</code>
+			<Spinner spinnerName='wordpress' overrideSpinnerClassName='my-class-to-override' />
+
+			<br /><br /><br />
+
+			<code>&lt;Spinner spinnerName='wordpress' className='my-class' /&gt;</code>
+			<Spinner spinnerName='wordpress' className='my-class' />
+		</div>
+	),
+	document.body	
+);
+
