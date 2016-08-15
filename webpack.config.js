@@ -1,32 +1,38 @@
-var path = require('path');
-var webpack = require('webpack');
-
+const path = require('path');
 
 module.exports = {
   entry: [
-    './examples/index'
+    './examples/index.jsx',
   ],
   devServer: {
     contentBase: './examples/',
-    hot: true
+    hot: true,
   },
-	output: {
+  output: {
     path: path.join(__dirname, 'examples'),
-		filename: 'bundle.js',
-	},
-	resolveLoader: {
-		modulesDirectories: ['node_modules']
-	},
-	resolve: {
-		extensions: ['', '.js', '.cjsx', '.coffee']
-	},
+    filename: 'bundle.js',
+  },
+  resolveLoader: {
+    modulesDirectories: ['node_modules'],
+  },
+  resolve: {
+    extensions: ['', '.js'],
+  },
   plugins: [
   ],
-	module: {
-		loaders: [
-      { test: /\.css$/, loaders: ['style', 'css']},
-      { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
-      { test: /\.coffee$/, loader: 'coffee' }
-    ]
-  }
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015', 'react'],
+        },
+      },
+    ],
+  },
 };
