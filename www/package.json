@@ -7,7 +7,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-react-hmre": "^1.1.1",
-    "gatsby": "^0.12.1",
+    "gatsby": "^0.12.3",
     "history": "^2.0.2",
     "postcss-loader": "^0.10.0",
     "react-document-title": "^2.0.2",

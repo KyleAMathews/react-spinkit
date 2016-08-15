@@ -1,4 +1,4 @@
-# React Gravatar website
+# React Spinkit website
 
 This site is built using [Gatsby](https://github.com/gatsbyjs/gatsby)
 
