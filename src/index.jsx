@@ -1,6 +1,17 @@
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
 import cx from 'classnames';
 import assign from 'object-assign';
+import '../css/fade-in.css';
+import '../css/chasing-dots.css';
+import '../css/circle.css';
+import '../css/cube-grid.css';
+import '../css/double-bounce.css';
+import '../css/pulse.css';
+import '../css/rotating-plane.css';
+import '../css/three-bounce.css';
+import '../css/wandering-cubes.css';
+import '../css/wave.css';
+import '../css/wordpress.css';
 
 export default class Spinner extends React.Component {
 
@@ -22,13 +33,6 @@ export default class Spinner extends React.Component {
     delete props.noFadeIn;
     delete props.overrideSpinnerClassName;
     delete props.className;
-
-    if (!this.props.noFadeIn) {
-      require('../css/fade-in.css'); // eslint-disable-line global-require
-    }
-
-    // Include spinner-specific css
-    require(`../css/${this.props.spinnerName}.css`); // eslint-disable-line global-require
 
     let spinnerEl;
     switch (this.props.spinnerName) {
