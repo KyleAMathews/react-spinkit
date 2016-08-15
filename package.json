@@ -15,10 +15,6 @@
     "classnames": "^2.2.3",
     "object-assign": "^4.1.0"
   },
-	"peerDependencies": {
-		"react": "^15.3.0",
-		"react-dom": "^15.3.0"
-	},
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
