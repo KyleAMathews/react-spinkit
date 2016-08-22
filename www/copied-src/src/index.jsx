@@ -13,7 +13,7 @@ import '../css/wandering-cubes.css';
 import '../css/wave.css';
 import '../css/wordpress.css';
 
-export default class Spinner extends React.Component {
+class Spinner extends React.Component {
 
   constructor(props) {
     super(props);
@@ -156,3 +156,5 @@ Spinner.defaultProps = {
   noFadeIn: false,
   overrideSpinnerClassName: '',
 };
+
+module.exports = Spinner;
