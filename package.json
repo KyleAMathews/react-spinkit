@@ -1,7 +1,7 @@
 {
   "name": "react-spinkit",
   "description": "A collection of loading indicators animated with CSS for React",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "browserify": {
     "transform": [
@@ -50,10 +50,9 @@
     "url": "https://github.com/KyleAMathews/react-spinkit.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "build": "babel src --out-dir dist/",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore --ignore-pattern www .",
-    "watch": "babel -w src --out-dir dist/",
-    "test": "npm run lint"
+    "watch": "babel -w src --out-dir dist/"
   }
 }
