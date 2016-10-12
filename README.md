@@ -7,6 +7,12 @@ Currently I've ported all the spinner animations from
 [Spinkit](https://github.com/tobiasahlin/SpinKit). If you have other favorite
  css spinner you'd like to include, open an issue.
 
+## Install
+
+```console
+$ npm install react-spinkit --save
+```
+
 ## Usage
 ```javascript
 var Spinner = require('react-spinkit');
