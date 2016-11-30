@@ -18,7 +18,7 @@
   margin: 0 auto;
   width: 18%;
   height: 18%;
-  background-color: #333;
+  background-color: currentColor;
 
   border-radius: 100%;
   -webkit-animation: fadedelay 1.2s infinite ease-in-out;

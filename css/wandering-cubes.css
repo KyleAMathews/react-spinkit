@@ -5,7 +5,7 @@
 }
 
 .cube1, .cube2 {
-  background-color: #333;
+  background-color: currentColor;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -29,7 +29,7 @@
 }
 
 @keyframes cubemove {
-  25% { 
+  25% {
     transform: translateX(42px) rotate(-90deg) scale(0.5);
     -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
   } 50% {
