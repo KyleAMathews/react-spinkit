@@ -22,8 +22,8 @@ class Spinner extends React.Component {
 
   render() {
     const classes = cx({
-      'fade-in': !this.props.noFadeIn,
-      spinner: this.props.overrideSpinnerClassName === '',
+      'sk-fade-in': !this.props.noFadeIn,
+      'sk-spinner': this.props.overrideSpinnerClassName === '',
       [this.props.overrideSpinnerClassName]: !!this.props.overrideSpinnerClassName,
       [this.props.className]: !!this.props.className,
     });
@@ -38,93 +38,93 @@ class Spinner extends React.Component {
     switch (this.props.spinnerName) {
       case 'double-bounce':
         spinnerEl = (
-          <div {...props} className={`double-bounce ${classes}`}>
-            <div className="double-bounce1" />
-            <div className="double-bounce2" />
+          <div {...props} className={`sk-double-bounce ${classes}`}>
+            <div className="sk-double-bounce1" />
+            <div className="sk-double-bounce2" />
           </div>
         );
         break;
       case 'rotating-plane':
         spinnerEl = (
           <div {...props} className={classes}>
-            <div className="rotating-plane" />
+            <div className="sk-rotating-plane" />
           </div>
         );
         break;
       case 'wave':
         spinnerEl = (
-          <div {...props} className={`wave ${classes}`}>
-            <div className="rect1" />
-            <div className="rect2" />
-            <div className="rect3" />
-            <div className="rect4" />
-            <div className="rect5" />
+          <div {...props} className={`sk-wave ${classes}`}>
+            <div className="sk-rect1" />
+            <div className="sk-rect2" />
+            <div className="sk-rect3" />
+            <div className="sk-rect4" />
+            <div className="sk-rect5" />
           </div>
         );
         break;
       case 'wandering-cubes':
         spinnerEl = (
-          <div {...props} className={`wandering-cubes ${classes}`}>
-            <div className="cube1" />
-            <div className="cube2" />
+          <div {...props} className={`sk-wandering-cubes ${classes}`}>
+            <div className="sk-cube1" />
+            <div className="sk-cube2" />
           </div>
         );
         break;
       case 'pulse':
         spinnerEl = (
           <div {...props} className={classes}>
-            <div className="pulse" />
+            <div className="sk-pulse" />
           </div>
         );
         break;
       case 'chasing-dots':
         spinnerEl = (
           <div {...props} className={classes}>
-            <div className="chasing-dots">
-              <div className="dot1" />
-              <div className="dot2" />
+            <div className="sk-chasing-dots">
+              <div className="sk-dot1" />
+              <div className="sk-dot2" />
             </div>
           </div>
         );
         break;
       case 'circle':
         spinnerEl = (
-          <div {...props} className={`circle-wrapper ${classes}`}>
-            <div className="circle1 circle" />
-            <div className="circle2 circle" />
-            <div className="circle3 circle" />
-            <div className="circle4 circle" />
-            <div className="circle5 circle" />
-            <div className="circle6 circle" />
-            <div className="circle7 circle" />
-            <div className="circle8 circle" />
-            <div className="circle9 circle" />
-            <div className="circle10 circle" />
-            <div className="circle11 circle" />
-            <div className="circle12 circle" />
+          <div {...props} className={`sk-circle-wrapper ${classes}`}>
+            <div className="sk-circle1 sk-circle" />
+            <div className="sk-circle2 sk-circle" />
+            <div className="sk-circle3 sk-circle" />
+            <div className="sk-circle4 sk-circle" />
+            <div className="sk-circle5 sk-circle" />
+            <div className="sk-circle6 sk-circle" />
+            <div className="sk-circle7 sk-circle" />
+            <div className="sk-circle8 sk-circle" />
+            <div className="sk-circle9 sk-circle" />
+            <div className="sk-circle10 sk-circle" />
+            <div className="sk-circle11 sk-circle" />
+            <div className="sk-circle12 sk-circle" />
           </div>
         );
         break;
       case 'cube-grid':
         spinnerEl = (
-          <div {...props} className={`cube-grid ${classes}`}>
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
-            <div className="cube" />
+          <div {...props} className={`sk-cube-grid ${classes}`}>
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
           </div>
         );
         break;
       case 'wordpress':
         spinnerEl = (
           <div {...props} className={classes}>
-            <div className="wordpress">
-              <div className="inner-circle" />
+            <div className="sk-wordpress">
+              <div className="sk-inner-circle" />
             </div>
           </div>
         );
@@ -132,10 +132,10 @@ class Spinner extends React.Component {
       case 'three-bounce':
       default:
         spinnerEl = (
-          <div {...props} className={`three-bounce ${classes}`}>
-            <div className="bounce1" />
-            <div className="bounce2" />
-            <div className="bounce3" />
+          <div {...props} className={`sk-three-bounce ${classes}`}>
+            <div className="sk-bounce1" />
+            <div className="sk-bounce2" />
+            <div className="sk-bounce3" />
           </div>
         );
     }
@@ -152,7 +152,7 @@ Spinner.propTypes = {
 };
 
 Spinner.defaultProps = {
-  spinnerName: 'three-bounce',
+  spinnerName: 'sk-three-bounce',
   noFadeIn: false,
   overrideSpinnerClassName: '',
 };
