@@ -27,6 +27,11 @@ class SpinnerExamples extends React.Component {
 
         <br /><br /><br />
 
+        <code>&lt;Spinner spinnerName="folding-cube" /&gt;</code>
+        <Spinner spinnerName="folding-cube" />
+
+        <br /><br /><br />
+
         <code>&lt;Spinner spinnerName="wave" /&gt;</code>
         <Spinner spinnerName="wave" />
 
