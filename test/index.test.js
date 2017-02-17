@@ -89,10 +89,6 @@ describe('<Spinner />', () => {
 
 		expect(wrapper.find('div.sk-folding-cube').length).to.equal(1);
 		expect(wrapper.find('div.sk-cube').length).to.equal(4);
-		expect(wrapper.find('div.sk-cube1').length).to.equal(1);
-		expect(wrapper.find('div.sk-cube2').length).to.equal(1);
-		expect(wrapper.find('div.sk-cube3').length).to.equal(1);
-		expect(wrapper.find('div.sk-cube4').length).to.equal(1);
 	});
 
 	it('should render wordpress spinner', () => {
