@@ -6,6 +6,7 @@ import '../css/chasing-dots.css';
 import '../css/circle.css';
 import '../css/cube-grid.css';
 import '../css/double-bounce.css';
+import '../css/folding-cube.css';
 import '../css/pulse.css';
 import '../css/rotating-plane.css';
 import '../css/three-bounce.css';
@@ -123,10 +124,10 @@ class Spinner extends React.Component {
       case 'folding-cube':
         spinnerEl = (
           <div {...props} className={`sk-folding-cube ${classes}`}>
-            <div className="sk-cube1 sk-cube" />
-            <div className="sk-cube2 sk-cube" />
-            <div className="sk-cube4 sk-cube" />
-            <div className="sk-cube3 sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
+            <div className="sk-cube" />
           </div>
         );
         break;
