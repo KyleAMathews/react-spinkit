@@ -120,6 +120,16 @@ class Spinner extends React.Component {
           </div>
         );
         break;
+      case 'folding-cube':
+        spinnerEl = (
+          <div {...props} className={`sk-folding-cube ${classes}`}>
+            <div className="sk-cube1 sk-cube" />
+            <div className="sk-cube2 sk-cube" />
+            <div className="sk-cube4 sk-cube" />
+            <div className="sk-cube3 sk-cube" />
+          </div>
+        );
+        break;
       case 'wordpress':
         spinnerEl = (
           <div {...props} className={classes}>
