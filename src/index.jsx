@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
 import cx from 'classnames';
 import assign from 'object-assign';
@@ -156,10 +157,10 @@ class Spinner extends React.Component {
 }
 
 Spinner.propTypes = {
-  spinnerName: React.PropTypes.string.isRequired,
-  noFadeIn: React.PropTypes.bool,
-  overrideSpinnerClassName: React.PropTypes.string,
-  className: React.PropTypes.string,
+  spinnerName: PropTypes.string.isRequired,
+  noFadeIn: PropTypes.bool,
+  overrideSpinnerClassName: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Spinner.defaultProps = {
