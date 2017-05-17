@@ -56,8 +56,14 @@ class Spinner extends React.Component {
     delete props.overrideSpinnerClassName;
     delete props.className;
 
+    if (this.props.color) {
+      props.style = props.style ?
+        { ...props.style, color: this.props.color } :
+        { color: this.props.color };
+    }
+
     return (
-      <div {...props} className={`${classes}`} style={{ color: this.props.color }}>
+      <div {...props} className={`${classes}`}>
         {[...Array(spinnerInfo.divCount)].map((_, idx) => <div key={idx} />)}
       </div>
     );
