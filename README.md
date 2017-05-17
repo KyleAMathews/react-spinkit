@@ -49,9 +49,10 @@ For example: `<Spinner spinnerName='three-bounce' fadeIn='half' />`.
 ## PropTypes
 * **spinnerName**—specify spinner to use.
 * **fadeIn**-set the time before the spinner fades in.
-* **overrideSpinnerClassName**—change the default "spinner" className.
+* **overrideSpinnerClassName**—change the default `sk-spinner` className.
+* **className**-add a custom classname to the outer div.
 * **color**-programmatically set the color of the spinners; this can either be a
-hex value or a color word
+hex value or a color word.
 
 ## Server-side rendering
 If you want to use this for server-side rendering, set

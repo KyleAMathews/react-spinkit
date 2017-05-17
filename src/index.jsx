@@ -43,7 +43,7 @@ class Spinner extends React.Component {
       'sk-fade-in': this.props.fadeIn === 'full' && !this.props.noFadeIn,
       'sk-fade-in-half-second': this.props.fadeIn === 'half' && !this.props.noFadeIn,
       'sk-fade-in-quarter-second': this.props.fadeIn === 'quarter' && !this.props.noFadeIn,
-      'sk-spinner': this.props.overrideSpinnerClassName === '',
+      'sk-spinner': !this.props.overrideSpinnerClassName,
       [this.props.overrideSpinnerClassName]: !!this.props.overrideSpinnerClassName,
       [this.props.className]: !!this.props.className,
       [spinnerInfo.className || this.props.spinnerName]: true,
@@ -63,7 +63,7 @@ class Spinner extends React.Component {
     }
 
     return (
-      <div {...props} className={`${classes}`}>
+      <div {...props} className={classes}>
         {[...Array(spinnerInfo.divCount)].map((_, idx) => <div key={idx} />)}
       </div>
     );

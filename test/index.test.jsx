@@ -8,11 +8,20 @@ import Spinner from '../src/index';
 import { spinkitSpinners, loadersCssSpinners } from '../src/spinners';
 
 describe('<Spinner />', () => {
-  it('should override `spinner` className', () => {
-    const wrapper = shallow(<Spinner overrideSpinnerClassName="sk-custom-spinner" />);
+  describe('custom classes', () => {
+    it('should override `sk-spinner` class when overrideSpinnerClassName is set', () => {
+      const wrapper = shallow(<Spinner overrideSpinnerClassName="sk-custom-spinner" />);
 
-    expect(wrapper.find('div.sk-spinner').length).to.equal(0);
-    expect(wrapper.find('div.sk-custom-spinner').length).to.equal(1);
+      expect(wrapper.find('div.sk-spinner').length).to.equal(0);
+      expect(wrapper.find('div.sk-custom-spinner').length).to.equal(1);
+    });
+
+    it('should add extra class when className is set', () => {
+      const wrapper = shallow(<Spinner className="sk-custom-spinner" />);
+
+      expect(wrapper.find('div.sk-spinner').length).to.equal(1);
+      expect(wrapper.find('div.sk-custom-spinner').length).to.equal(1);
+    });
   });
 
   describe('fadeIn behavior', () => {
