@@ -31,7 +31,8 @@ CSS is loaded automatically when using [Webpack](http://webpack.github.io) with 
 This also includes most of the spinners from [loaders.css](https://github.com/ConnorAtherton/loaders.css). Note that while
 all of the native spinners from Spinkit are contained within their bounding divs,
 some of the loaders.css spinners have a zero-sized parent div and extend outward
-from that (as you can see on the demos page).
+from that (as you can see on the demos page). Regardless of this, they are all
+easily centerable with flexbox.
 
 ## Webpack or Browserify is required
 Currently we only support Browserify and Webpack. If you'd like support

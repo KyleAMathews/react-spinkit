@@ -49,6 +49,7 @@ function SpinnerExamples() {
       {Object.keys(spinkitSpinners).map(spinnerPreview)}
 
       <h3>loaders.css Spinners</h3>
+      <h6>(not all of these center here, but are easily centerable with flexbox)</h6>
       {Object.keys(loadersCssSpinners).map(spinnerPreview)}
 
       <h3>Spinner Options</h3>
