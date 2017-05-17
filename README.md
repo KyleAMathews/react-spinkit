@@ -48,7 +48,7 @@ second, a half second, a quarter second, and no fade in, respectively.
 For example: `<Spinner fadeIn='half' />`.
 
 ## PropTypes
-* **name**—specify spinner to use.
+* **name**—specify spinner to use (defaults to `three-bounce`).
 * **fadeIn**-set the time before the spinner fades in.
 * **overrideSpinnerClassName**—change the default `sk-spinner` className.
 * **className**-add a custom classname to the outer div.
