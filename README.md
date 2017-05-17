@@ -17,7 +17,7 @@ $ npm install react-spinkit --save
 ```javascript
 var Spinner = require('react-spinkit');
 
-<Spinner spinnerName='double-bounce' />
+<Spinner name='double-bounce' />
 ```
 
 See more examples on the [demo page](http://kyleamathews.github.io/react-spinkit/).
@@ -45,10 +45,10 @@ default, react-spinkit will fade in your spinner at one second. Nevertheless,
 you can configure spinner fade-in behavior with the `fadeIn` prop, which
 accepts values `full` (the default), `half`, `quarter`, and `none` for one
 second, a half second, a quarter second, and no fade in, respectively.
-For example: `<Spinner spinnerName='three-bounce' fadeIn='half' />`.
+For example: `<Spinner fadeIn='half' />`.
 
 ## PropTypes
-* **spinnerName**—specify spinner to use.
+* **name**—specify spinner to use.
 * **fadeIn**-set the time before the spinner fades in.
 * **overrideSpinnerClassName**—change the default `sk-spinner` className.
 * **className**-add a custom classname to the outer div.

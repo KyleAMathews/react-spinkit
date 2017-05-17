@@ -38,7 +38,7 @@ class Spinner extends React.Component {
   }
 
   render() {
-    const spinnerInfo = allSpinners[this.props.spinnerName] || allSpinners['three-bounce'];
+    const spinnerInfo = allSpinners[this.props.name] || allSpinners['three-bounce'];
     const classes = cx({
       'sk-fade-in': this.props.fadeIn === 'full' && !this.props.noFadeIn,
       'sk-fade-in-half-second': this.props.fadeIn === 'half' && !this.props.noFadeIn,
@@ -46,11 +46,11 @@ class Spinner extends React.Component {
       'sk-spinner': !this.props.overrideSpinnerClassName,
       [this.props.overrideSpinnerClassName]: !!this.props.overrideSpinnerClassName,
       [this.props.className]: !!this.props.className,
-      [spinnerInfo.className || this.props.spinnerName]: true,
+      [spinnerInfo.className || this.props.name]: true,
     });
 
     const props = assign({}, this.props);
-    delete props.spinnerName;
+    delete props.name;
     delete props.fadeIn;
     delete props.noFadeIn;
     delete props.overrideSpinnerClassName;
@@ -71,7 +71,7 @@ class Spinner extends React.Component {
 }
 
 Spinner.propTypes = {
-  spinnerName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   noFadeIn: PropTypes.bool,
   fadeIn: PropTypes.oneOf(['full', 'half', 'quarter', 'none']),
   overrideSpinnerClassName: PropTypes.string,
@@ -80,7 +80,7 @@ Spinner.propTypes = {
 };
 
 Spinner.defaultProps = {
-  spinnerName: 'sk-three-bounce',
+  name: 'three-bounce',
   noFadeIn: false,
   fadeIn: 'full',
   overrideSpinnerClassName: '',

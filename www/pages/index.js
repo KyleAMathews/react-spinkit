@@ -25,12 +25,12 @@ function spinnerPreview(spinner, idx) {
   return (
     <div key={idx}>
       <div style={{ display: 'inline-block', width: '50%' }}>
-        <code>&lt;Spinner spinnerName="{spinner}" /&gt;</code>
-        <Spinner spinnerName={spinner} />
+        <code>&lt;Spinner name="{spinner}" /&gt;</code>
+        <Spinner name={spinner} />
       </div>
       <div style={{ display: 'inline-block', width: '50%' }}>
-        <code>&lt;Spinner spinnerName="{spinner}" color="{color}"/&gt;</code>
-        <Spinner spinnerName={spinner} color={color} />
+        <code>&lt;Spinner name="{spinner}" color="{color}"/&gt;</code>
+        <Spinner name={spinner} color={color} />
       </div>
       <br /><br /><br />
     </div>
@@ -54,30 +54,30 @@ function SpinnerExamples() {
 
       <h3>Spinner Options</h3>
 
-      <code>&lt;Spinner spinnerName="wordpress" fadeIn="none" /&gt;</code>
-      <Spinner spinnerName="wordpress" fadeIn="none" />
+      <code>&lt;Spinner name="wordpress" fadeIn="none" /&gt;</code>
+      <Spinner name="wordpress" fadeIn="none" />
       <br /><br /><br />
 
-      <code>&lt;Spinner spinnerName="wordpress" fadeIn="quarter" /&gt;</code>
-      <Spinner spinnerName="wordpress" fadeIn="quarter" />
+      <code>&lt;Spinner name="wordpress" fadeIn="quarter" /&gt;</code>
+      <Spinner name="wordpress" fadeIn="quarter" />
       <br /><br /><br />
 
-      <code>&lt;Spinner spinnerName="wordpress" fadeIn="half" /&gt;</code>
-      <Spinner spinnerName="wordpress" fadeIn="half" />
+      <code>&lt;Spinner name="wordpress" fadeIn="half" /&gt;</code>
+      <Spinner name="wordpress" fadeIn="half" />
       <br /><br /><br />
 
       <code>
-        &lt;Spinner spinnerName="wordpress" overrideSpinnerClassName="my-class-to-override" /&gt;
+        &lt;Spinner name="wordpress" overrideSpinnerClassName="my-class-to-override" /&gt;
       </code>
-      <Spinner spinnerName="wordpress" overrideSpinnerClassName="my-class-to-override" />
+      <Spinner name="wordpress" overrideSpinnerClassName="my-class-to-override" />
       <br /><br /><br />
 
-      <code>&lt;Spinner spinnerName="wordpress" className="my-class" /&gt;</code>
-      <Spinner spinnerName="wordpress" className="my-class" />
+      <code>&lt;Spinner name="wordpress" className="my-class" /&gt;</code>
+      <Spinner name="wordpress" className="my-class" />
       <br /><br /><br />
 
-      <code>&lt;Spinner spinnerName="wordpress" color="green" /&gt;</code>
-      <Spinner spinnerName="wordpress" color="green" />
+      <code>&lt;Spinner name="wordpress" color="green" /&gt;</code>
+      <Spinner name="wordpress" color="green" />
     </div>
   );
 }

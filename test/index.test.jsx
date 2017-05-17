@@ -70,7 +70,7 @@ describe('<Spinner />', () => {
     Object.keys(spinkitSpinners).forEach((spinner) => {
       it(`should render ${spinner} spinner`, () => {
         const spinnerInfo = spinkitSpinners[spinner];
-        const wrapper = shallow(<Spinner spinnerName={spinner} />);
+        const wrapper = shallow(<Spinner name={spinner} />);
 
         expect(wrapper.hasClass(spinnerInfo.className)).to.equal(true);
         expect(wrapper.children().length).to.equal(spinnerInfo.divCount);
@@ -82,7 +82,7 @@ describe('<Spinner />', () => {
     Object.keys(loadersCssSpinners).forEach((spinner) => {
       it(`should render ${spinner} spinner`, () => {
         const spinnerInfo = loadersCssSpinners[spinner];
-        const wrapper = shallow(<Spinner spinnerName={spinner} />);
+        const wrapper = shallow(<Spinner name={spinner} />);
 
         expect(wrapper.hasClass(spinner)).to.equal(true);
         expect(wrapper.children().length).to.equal(spinnerInfo.divCount);
