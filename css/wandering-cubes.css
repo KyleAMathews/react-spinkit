@@ -1,6 +1,6 @@
 .sk-wandering-cubes {
-  width: 27px;
-  height: 27px;
+  width: 52px;
+  height: 52px;
   position: relative;
 }
 
@@ -22,9 +22,9 @@
 }
 
 @-webkit-keyframes sk-cubemove {
-  25% { -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5) }
-  50% { -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg) }
-  75% { -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5) }
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
   100% { -webkit-transform: rotate(-360deg) }
 }
 
@@ -47,4 +47,3 @@
     -webkit-transform: rotate(-360deg);
   }
 }
-

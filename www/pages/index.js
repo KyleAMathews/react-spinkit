@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
 import Spinner from '../copied-src/src/';
 
 class SpinnerExamples extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         <h1>React-Spinkit</h1>
@@ -69,8 +69,13 @@ class SpinnerExamples extends React.Component {
 
         <h3>Spinner Options</h3>
 
-        <code>&lt;Spinner spinnerName="wordpress" noFadeIn /&gt;</code>
-        <Spinner spinnerName="wordpress" noFadeIn />
+        <code>&lt;Spinner spinnerName="wordpress" fadeIn="none" /&gt;</code>
+        <Spinner spinnerName="wordpress" fadeIn="none" />
+
+        <br /><br /><br />
+
+        <code>&lt;Spinner spinnerName="wordpress" fadeIn="half" /&gt;</code>
+        <Spinner spinnerName="wordpress" fadeIn="half" />
 
         <br /><br /><br />
 
@@ -84,9 +89,14 @@ class SpinnerExamples extends React.Component {
 
         <code>&lt;Spinner spinnerName="wordpress" className="my-class" /&gt;</code>
         <Spinner spinnerName="wordpress" className="my-class" />
+
+        <br /><br /><br />
+
+        <code>&lt;Spinner spinnerName="wordpress" color="green" /&gt;</code>
+        <Spinner spinnerName="wordpress" color="green" />
       </div>
-    )
+    );
   }
 }
 
-export default SpinnerExamples
+export default SpinnerExamples;

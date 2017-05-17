@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "loaders.css": "^0.1.2",
     "object-assign": "^4.1.0",
     "prop-types": "^15.5.8"
   },
@@ -59,7 +60,7 @@
     "test": "npm run lint && npm run mocha",
     "build": "babel src --out-dir dist/",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore --ignore-pattern www --ignore-pattern test --ignore-pattern node_modules .",
-    "mocha": "./node_modules/.bin/mocha mocha ./test/**/*.test.js  --opts ./test/mocha.opts",
+    "mocha": "./node_modules/.bin/mocha mocha ./test/**/*.test.jsx  --opts ./test/mocha.opts",
     "watch": "babel -w src --out-dir dist/"
   }
 }
