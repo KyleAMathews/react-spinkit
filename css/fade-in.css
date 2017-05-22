@@ -51,4 +51,21 @@
   -moz-animation: sk-fade-in 2s;
   -o-animation: sk-fade-in 2s;
   -ms-animation: sk-fade-in 2s;
+  animation: sk-fade-in 2s;
+}
+
+.sk-fade-in-half-second {
+  -webkit-animation: sk-fade-in 1s;
+  -moz-animation: sk-fade-in 1s;
+  -o-animation: sk-fade-in 1s;
+  -ms-animation: sk-fade-in 1s;
+  animation: sk-fade-in 1s;
+}
+
+.sk-fade-in-quarter-second {
+  -webkit-animation: sk-fade-in 0.5s;
+  -moz-animation: sk-fade-in 0.5s;
+  -o-animation: sk-fade-in 0.5s;
+  -ms-animation: sk-fade-in 0.5s;
+  animation: sk-fade-in 0.5s;
 }

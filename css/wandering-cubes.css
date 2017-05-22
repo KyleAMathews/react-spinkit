@@ -1,11 +1,11 @@
 .sk-wandering-cubes {
-  width: 27px;
-  height: 27px;
+  width: 52px;
+  height: 52px;
   position: relative;
 }
 
-.sk-cube1, .sk-cube2 {
-  background-color: #333;
+.sk-wandering-cubes > div {
+  background-color: currentColor;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -16,15 +16,15 @@
   animation: sk-cubemove 1.8s infinite ease-in-out;
 }
 
-.sk-cube2 {
+.sk-wandering-cubes > div:last-child {
   -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
 }
 
 @-webkit-keyframes sk-cubemove {
-  25% { -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5) }
-  50% { -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg) }
-  75% { -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5) }
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
   100% { -webkit-transform: rotate(-360deg) }
 }
 
@@ -47,4 +47,3 @@
     -webkit-transform: rotate(-360deg);
   }
 }
-

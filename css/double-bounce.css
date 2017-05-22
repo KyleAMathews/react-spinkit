@@ -1,15 +1,14 @@
 .sk-double-bounce {
   width: 27px;
   height: 27px;
-
   position: relative;
 }
 
-.sk-double-bounce1, .sk-double-bounce2 {
+.sk-double-bounce > div {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #333;
+  background-color: currentColor;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -19,7 +18,7 @@
   animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
-.sk-double-bounce2 {
+.sk-double-bounce > div:last-child {
   -webkit-animation-delay: -1.0s;
   animation-delay: -1.0s;
 }
@@ -38,4 +37,3 @@
     -webkit-transform: scale(1.0);
   }
 }
-

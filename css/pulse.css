@@ -1,9 +1,9 @@
-.sk-pulse {
+.sk-pulse > div {
   width: 27px;
   height: 27px;
-  background-color: #333;
-
+  background-color: currentColor;
   border-radius: 100%;
+
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out;
 }
@@ -26,4 +26,3 @@
     opacity: 0;
   }
 }
-

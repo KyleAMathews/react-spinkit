@@ -7,22 +7,23 @@
   animation: sk-rotate 2.0s infinite linear;
 }
 
-.sk-dot1, .sk-dot2 {
+.sk-chasing-dots > div {
   width: 60%;
   height: 60%;
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: #333;
+  background-color: currentColor;
   border-radius: 100%;
 
   -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
   animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
-.sk-dot2 {
+.sk-chasing-dots > div:last-child {
   top: auto;
-  bottom: 0px;
+  bottom: 0;
+
   -webkit-animation-delay: -1.0s;
   animation-delay: -1.0s;
 }
@@ -49,4 +50,3 @@
     -webkit-transform: scale(1.0);
   }
 }
-
