@@ -1,7 +1,7 @@
 {
   "name": "react-spinkit",
   "description": "A collection of loading indicators animated with CSS for React",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "browserify": {
     "transform": [
