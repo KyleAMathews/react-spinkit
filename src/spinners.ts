@@ -1,4 +1,11 @@
-const spinkitSpinners = {
+export interface SpinnerInfo {
+  /** Class added to the outer div. Defaults to the spinner name. */
+  className?: string;
+  /** Number of child divs the spinner's CSS animates. */
+  divCount: number;
+}
+
+export const spinkitSpinners = {
   circle: { className: 'sk-circle', divCount: 12 },
   'cube-grid': { className: 'sk-cube-grid', divCount: 9 },
   wave: { className: 'sk-wave', divCount: 5 },
@@ -10,9 +17,9 @@ const spinkitSpinners = {
   'rotating-plane': { className: 'sk-rotating-plane', divCount: 1 },
   pulse: { className: 'sk-pulse', divCount: 1 },
   wordpress: { className: 'sk-wordpress', divCount: 1 },
-};
+} satisfies Record<string, SpinnerInfo>;
 
-const loadersCssSpinners = {
+export const loadersCssSpinners = {
   'ball-grid-beat': { divCount: 9 },
   'ball-grid-pulse': { divCount: 9 },
   'line-spin-fade-loader': { divCount: 8 },
@@ -35,13 +42,11 @@ const loadersCssSpinners = {
   'ball-clip-rotate': { divCount: 1 },
   'ball-scale-ripple': { divCount: 1 },
   'triangle-skew-spin': { divCount: 1 },
-};
+} satisfies Record<string, SpinnerInfo>;
 
-module.exports = {
-  spinkitSpinners,
-  loadersCssSpinners,
-  allSpinners: {
-    ...spinkitSpinners,
-    ...loadersCssSpinners,
-  },
+export type SpinnerName = keyof typeof spinkitSpinners | keyof typeof loadersCssSpinners;
+
+export const allSpinners: Record<SpinnerName, SpinnerInfo> = {
+  ...spinkitSpinners,
+  ...loadersCssSpinners,
 };

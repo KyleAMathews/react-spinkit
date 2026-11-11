@@ -1,0 +1,11 @@
+{
+  // Type-checks the tests, which Vitest runs through Vite (bundler semantics).
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "rootDir": "..",
+    "noEmit": true
+  },
+  "include": [".", "../src", "../vitest.config.mts"]
+}
