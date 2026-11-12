@@ -36,8 +36,11 @@
     "watch": "tsc -p . --watch",
     "typecheck": "tsc -p . --noEmit && tsc -p test",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "vitest run && vitest run --config vitest.react18.config.mts",
     "test:watch": "vitest",
+    "test:oracles": "vitest run oracle && vitest run --config vitest.react18.config.mts",
+    "gaps": "oracle-gaps --package . --source src/Spinner.tsx,src/spinners.ts,src/index.ts,src/unstyled.ts --seed 20261112 --mutants test/oracle-mutants",
+    "gaps:react18": "oracle-gaps --package . --config vitest.react18.config.mts --source src/Spinner.tsx,src/spinners.ts --seed 20261112 --mutants test/oracle-mutants",
     "test:dist": "node scripts/smoke-dist.cjs",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm test:dist",
     "prepublishOnly": "pnpm check",
@@ -45,7 +48,6 @@
     "site:build": "pnpm build && pnpm --filter react-spinkit-www build"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
     "loaders.css": "^0.1.2",
     "prop-types": "^15.8.1"
   },
@@ -55,6 +57,8 @@
   "devDependencies": {
     "@eslint-react/eslint-plugin": "^5.28.8",
     "@eslint/js": "^10.0.1",
+    "@tanstack/eslint-plugin-oracles": "https://pkg.pr.new/TanStack/oracles/@tanstack/eslint-plugin-oracles@81a9a8c",
+    "@tanstack/oracles": "https://pkg.pr.new/TanStack/oracles/@tanstack/oracles@81a9a8c",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^26.6.6",
@@ -62,6 +66,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^10.14.0",
+    "fast-check": "^4.10.2",
     "globals": "^17.14.0",
     "jsdom": "^31.0.0",
     "react": "^19.3.1",

@@ -1,0 +1,8 @@
+{
+  "id": "A04-ignore-noFadeIn",
+  "source": "src/Spinner.tsx",
+  "find": "!noFadeIn && fadeInClasses.get(String(fadeIn))",
+  "replace": "fadeInClasses.get(String(fadeIn))",
+  "intent": "noFadeIn no longer turns the fade class off",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

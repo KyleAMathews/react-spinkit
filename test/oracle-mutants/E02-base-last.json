@@ -1,0 +1,8 @@
+{
+  "id": "E02-base-last",
+  "source": "src/index.ts",
+  "find": "  require('../css/base.css');\n",
+  "replace": "  require('../css/fade-in.css');\n",
+  "intent": "base.css is replaced by a second fade-in.css (one file twice, one missing)",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

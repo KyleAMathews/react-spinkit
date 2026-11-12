@@ -1,0 +1,8 @@
+{
+  "id": "E03-true-only",
+  "source": "src/index.ts",
+  "find": "Boolean(process.env.REACT_SPINKIT_NO_STYLES)",
+  "replace": "process.env.REACT_SPINKIT_NO_STYLES === 'true'",
+  "intent": "only the word true disables styles (the reading the developer ruled out)",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

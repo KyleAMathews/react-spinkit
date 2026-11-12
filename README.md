@@ -69,7 +69,8 @@ If you want to use this for server-side rendering, set
 `process.env.REACT_SPINKIT_NO_STYLES` in your server build environment,
 in webpack via `webpack.DefinePlugin`, or whatever is appropriate to your
 build process. This will skip the import of styles and allow evaluation of
-the SpinKit code in node.
+the SpinKit code in node. Any non-empty value counts as set, including
+`"false"` and `"0"`; leave it unset or empty to load the styles.
 
 To skip the bundled CSS entirely (for example in a server bundle that can't
 process CSS imports, or if you want to provide your own styles), import the

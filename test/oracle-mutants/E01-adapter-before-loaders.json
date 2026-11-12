@@ -1,0 +1,8 @@
+{
+  "id": "E01-adapter-before-loaders",
+  "source": "src/index.ts",
+  "find": "  require('loaders.css');\n  require('../css/base.css');\n  require('../css/loaders-css.css');",
+  "replace": "  require('../css/base.css');\n  require('../css/loaders-css.css');\n  require('loaders.css');",
+  "intent": "loaders.css loads after the file that adapts it to color, so its white wins the cascade",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

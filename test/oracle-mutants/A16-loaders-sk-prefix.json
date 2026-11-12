@@ -1,0 +1,8 @@
+{
+  "id": "A16-loaders-sk-prefix",
+  "source": "src/Spinner.tsx",
+  "find": "className: info.className ?? name",
+  "replace": "className: info.className ?? `sk-${name}`",
+  "intent": "loaders.css spinners get an sk- class, which loaders.css does not style",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

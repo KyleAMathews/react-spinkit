@@ -1,0 +1,8 @@
+{
+  "id": "A10-warn-level",
+  "source": "src/Spinner.tsx",
+  "find": "console.warn(noFadeInWarning)",
+  "replace": "console.error(noFadeInWarning)",
+  "intent": "the deprecation goes to console.error",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

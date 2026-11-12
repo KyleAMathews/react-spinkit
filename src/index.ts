@@ -1,23 +1,23 @@
 import { Spinner } from './Spinner';
 
-/**
+/*
  * Whether the consumer opted out of the bundled CSS (e.g. for server-side
- * rendering) by setting `process.env.REACT_SPINKIT_NO_STYLES`.
+ * rendering) by setting `process.env.REACT_SPINKIT_NO_STYLES` to any non-empty
+ * value.
  *
  * The expression is read verbatim so bundlers that replace it at build time
  * (webpack's DefinePlugin, Vite/esbuild `define`) keep working. The try/catch
  * covers browser bundles where `process` doesn't exist at all, such as Vite's
- * dev server or webpack 5 without a `process` polyfill.
+ * dev server or webpack 5 without a `process` polyfill: styles stay on.
  */
-function stylesDisabled(): boolean {
-  try {
-    return Boolean(process.env.REACT_SPINKIT_NO_STYLES);
-  } catch {
-    return false;
-  }
+let stylesDisabled = false;
+try {
+  stylesDisabled = Boolean(process.env.REACT_SPINKIT_NO_STYLES);
+} catch {
+  // No `process` (or no readable `process.env`): load the styles.
 }
 
-if (!stylesDisabled()) {
+if (!stylesDisabled) {
   /* eslint-disable @typescript-eslint/no-require-imports -- CSS is loaded for its side effects */
   require('loaders.css');
   require('../css/base.css');

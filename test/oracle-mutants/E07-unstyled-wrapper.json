@@ -1,0 +1,8 @@
+{
+  "id": "E07-unstyled-wrapper",
+  "source": "src/unstyled.ts",
+  "find": "export = Spinner;",
+  "replace": "export = class UnstyledSpinner extends Spinner {};",
+  "intent": "the unstyled entry exports a different component",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

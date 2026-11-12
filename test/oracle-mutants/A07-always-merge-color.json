@@ -1,0 +1,8 @@
+{
+  "id": "A07-always-merge-color",
+  "source": "src/Spinner.tsx",
+  "find": "props.color ? { ...props.style, color: props.color } : props.style",
+  "replace": "{ ...props.style, color: props.color }",
+  "intent": "an empty color still overwrites style.color",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

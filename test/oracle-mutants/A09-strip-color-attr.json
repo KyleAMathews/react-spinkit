@@ -1,0 +1,8 @@
+{
+  "id": "A09-strip-color-attr",
+  "source": "src/Spinner.tsx",
+  "find": "<div {...props} style={style}",
+  "replace": "<div {...props} color={undefined} style={style}",
+  "intent": "the color attribute is stripped (a breaking change the developer ruled out)",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

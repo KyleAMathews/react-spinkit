@@ -1,0 +1,8 @@
+{
+  "id": "E06-catch-disables",
+  "source": "src/index.ts",
+  "find": "  // No `process` (or no readable `process.env`): load the styles.\n",
+  "replace": "  stylesDisabled = true;\n",
+  "intent": "an unreadable env turns the styles off",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

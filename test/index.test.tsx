@@ -101,6 +101,16 @@ describe('<Spinner />', () => {
     expect(el.children.length).toBe(spinkitSpinners['three-bounce'].divCount);
   });
 
+  it('should not accept children in its props type', () => {
+    // @ts-expect-error -- the spinner renders its own child divs
+    const el = renderSpinner({ children: 'Loading…' });
+    // @ts-expect-error -- React refuses dangerouslySetInnerHTML beside the spinner's children
+    const props: TestProps = { dangerouslySetInnerHTML: { __html: 'x' } };
+
+    expect(el.textContent).toBe('');
+    expect(props).toBeDefined();
+  });
+
   it('should export the same component from the unstyled entry point', () => {
     expect(UnstyledSpinner).toBe(Spinner);
   });
