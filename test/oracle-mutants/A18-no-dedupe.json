@@ -1,0 +1,8 @@
+{
+  "id": "A18-no-dedupe",
+  "source": "src/Spinner.tsx",
+  "find": "      ...new Set([",
+  "replace": "      ...([",
+  "intent": "a class string that two sources share appears twice (the review's regression)",
+  "author": "agent (Claude Code), 2026-11-12, from the PR review"
+}

@@ -45,7 +45,9 @@
  * stays on the div as an attribute exactly as given (decision by Kyle
  * Mathews, GitHub KyleAMathews, 2026-11-12: no breaking change), and the
  * spinner's own props never become attributes. A class the caller supplies counts as supplied,
- * so `className="sk-spinner"` beside an override is not a stray class.
+ * so `className="sk-spinner"` beside an override is not a stray class, and a
+ * class string identical to another source's appears once, as it did in
+ * 3.0.0 (`className="sk-circle"` on a circle gives one `sk-circle`).
  *
  * The model computes all of this from the props alone, with its own copy of
  * the spinner table taken from SpinKit's markup and loaders.css's own div
@@ -380,6 +382,11 @@ const histories = {
         plain(g, { className: 'sk-spinner', overrideSpinnerClassName: 'sk-fade-in', fadeIn: 'none' }),
     },
     {
+      name: 'className equals the spinner class',
+      enters: ['className set', 'caller class repeats a built-in class'],
+      build: (g: SpinnerHistory) => plain(g, { name: 'circle', className: 'sk-circle' }),
+    },
+    {
       name: 'class prop spelled toString',
       enters: ['className set', 'class prop spelled toString'],
       build: (g: SpinnerHistory) => plain(g, { className: 'toString' }),
@@ -456,6 +463,8 @@ interface Expected {
   callerClasses: Array<string>;
   /** Nothing extra: the exact class list. */
   classes: Array<string>;
+  /** Nothing extra: the class attribute's tokens, repeats kept, sorted. */
+  classTokens: Array<string>;
   /** Deprecation warning: the console calls the render owes. */
   console: Array<{ level: 'warn' | 'error'; namesNoFadeIn: boolean }>;
   /** Color: the div's inline declarations. */
@@ -484,6 +493,10 @@ function model(plan: SpinnerHistory): Expected {
   const supplied = new Set([...overrideClasses, ...callerClasses]);
   const base = plan.overrideSpinnerClassName ? overrideClasses : ['sk-spinner'];
   const classes = sorted([...(fadeClass ? [fadeClass] : []), ...base, ...callerClasses, spinner.className]);
+  // Each source is one class string; an identical string from two sources
+  // appears once (3.0.0's rule), while repeats inside one string stay.
+  const sources = [fadeClass, plan.overrideSpinnerClassName || 'sk-spinner', plan.className, spinner.className];
+  const classTokens = [...new Set(sources.filter((source): source is string => Boolean(source)))].flatMap(tokens).sort();
   return {
     spinnerClass: spinner.className,
     children: Array.from({ length: spinner.divCount }, () => '<div></div>'),
@@ -492,6 +505,7 @@ function model(plan: SpinnerHistory): Expected {
     overrideClasses: sorted(overrideClasses),
     callerClasses: sorted(callerClasses),
     classes,
+    classTokens,
     console: plan.noFadeIn ? [{ level: 'warn', namesNoFadeIn: true }] : [],
     // Color: a set color wins over style.color; every other style entry is kept.
     style: declarations({ ...plan.style, ...(plan.color ? { color: plan.color } : {}) }),
@@ -544,6 +558,8 @@ function driver(plan: SpinnerHistory, observe: (checkpoint: string, value: unkno
     const el = container.firstElementChild;
     observe('root', [...container.childNodes].map((n) => (n instanceof Element ? n.tagName.toLowerCase() : '#text')));
     observe('classes', el ? sorted(el.classList) : []);
+    // classList collapses repeated tokens; the attribute keeps them.
+    observe('class tokens', el ? tokens(el.getAttribute('class')).sort() : []);
     observe('children', el ? [...el.childNodes].map((n) => (n instanceof Element ? n.outerHTML : `#text ${n.textContent}`)) : []);
     observe('console', logged);
     const inline = (el as HTMLElement | null)?.style;
@@ -704,8 +720,9 @@ oracleProperty({
   id: 'nothing-extra',
   law: {
     statement:
-      'For every combination of props, the div\'s classes are exactly the fade class, sk-spinner or the override\'s classes, the caller\'s className classes, and the spinner\'s class, and no others.',
-    authority: 'README, PropTypes, which lists every source of a class on the outer div.',
+      'For every combination of props, the div\'s classes are exactly the fade class, sk-spinner or the override\'s classes, the caller\'s className classes, and the spinner\'s class, and no others; a class string identical to another source\'s appears once.',
+    authority:
+      'README, PropTypes, which lists every source of a class on the outer div. Repeats: Decision by Kyle Mathews (GitHub KyleAMathews), 2026-11-12: no breaking changes for consumers; 3.0.0 rendered a class string that equals another source\'s once (className="sk-circle" on a circle gives one sk-circle).',
     limits: 'Strings with lone surrogates are not generated.',
   },
   ...shared,
@@ -713,9 +730,20 @@ oracleProperty({
   check: (_plan, observations, expected) => {
     const classes = rendered(observations);
     if (!classes) return pass;
-    return differs('classes', 'nothing-extra', classes, expected.classes) ?? pass;
+    return (
+      differs('classes', 'nothing-extra', classes, expected.classes) ??
+      differs('class tokens', 'nothing-extra', read(observations, 'class tokens'), expected.classTokens, 'a class repeats') ??
+      pass
+    );
   },
   calibrations: [
+    {
+      name: 'a class string from two sources appears twice',
+      law: 'nothing-extra',
+      history: { constructed: 'className equals the spinner class' },
+      corrupt: (trace) =>
+        trace.map((o) => (o.checkpoint === 'class tokens' ? { ...o, value: [...(o.value as Array<string>), 'sk-circle'].sort() } : o)),
+    },
     {
       name: 'a stray class',
       law: 'nothing-extra',

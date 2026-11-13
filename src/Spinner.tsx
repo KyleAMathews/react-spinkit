@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { allSpinners, type SpinnerInfo, type SpinnerName } from './spinners';
+import { allSpinners, type SpinnerName } from './spinners';
 
 const noFadeInWarning =
   "Deprecation Warning (react-spinkit): noFadeIn prop should be replaced with fadeIn='none'";
@@ -9,7 +9,7 @@ const noFadeInWarning =
 // member (`constructor`, `toString`, ...). Each spinner's outer class is resolved
 // here; loaders.css spinners use their name.
 const spinnersByName = new Map(
-  Object.entries(allSpinners).map(([name, info]: [string, SpinnerInfo]) => [
+  Object.entries(allSpinners).map(([name, info]) => [
     name,
     { className: info.className ?? name, divCount: info.divCount },
   ]),
@@ -53,12 +53,15 @@ export class Spinner extends React.Component<Spinner.SpinnerProps> {
     const { name, fadeIn, noFadeIn, overrideSpinnerClassName, className, ...props } = this.props;
     const { className: spinnerClassName, divCount } = spinnersByName.get(String(name)) ?? fallback;
     // A list of strings, never object keys: as keys, a caller's class could
-    // collide with another or shadow `toString`.
+    // collide with another or shadow `toString`. A string two sources share
+    // appears once, as in 3.0.0.
     const classes = [
-      !noFadeIn && fadeInClasses.get(String(fadeIn)),
-      overrideSpinnerClassName || 'sk-spinner',
-      className,
-      spinnerClassName,
+      ...new Set([
+        !noFadeIn && fadeInClasses.get(String(fadeIn)),
+        overrideSpinnerClassName || 'sk-spinner',
+        className,
+        spinnerClassName,
+      ]),
     ]
       .filter(Boolean)
       .join(' ');
@@ -89,7 +92,7 @@ export declare namespace Spinner {
    * `dangerouslySetInnerHTML`, which React refuses beside them).
    */
   interface SpinnerProps
-    extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children' | 'dangerouslySetInnerHTML'> {
+    extends Omit<React.HTMLAttributes<HTMLDivElement>, 'dangerouslySetInnerHTML'> {
     children?: never;
     /** Spinner to render. Defaults to `three-bounce`. */
     name?: Name;

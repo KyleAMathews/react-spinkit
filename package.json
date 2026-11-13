@@ -44,7 +44,7 @@
     "test:dist": "node scripts/smoke-dist.cjs",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm test:dist",
     "prepublishOnly": "pnpm check",
-    "site:dev": "pnpm --filter react-spinkit-www dev",
+    "site:dev": "pnpm build && pnpm --filter react-spinkit-www dev",
     "site:build": "pnpm build && pnpm --filter react-spinkit-www build"
   },
   "dependencies": {
@@ -65,6 +65,7 @@
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "acorn": "^8.19.0",
     "eslint": "^10.14.0",
     "fast-check": "^4.10.2",
     "globals": "^17.14.0",

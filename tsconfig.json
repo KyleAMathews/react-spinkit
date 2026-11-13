@@ -1,7 +1,7 @@
 {
   // Builds the library (src/ -> dist/) as CommonJS with type declarations.
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2017",
     "lib": ["es2020", "dom", "dom.iterable"],
     "module": "node20",
     "jsx": "react",

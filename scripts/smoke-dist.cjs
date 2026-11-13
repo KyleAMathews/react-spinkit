@@ -10,7 +10,15 @@ const vm = require('node:vm');
 const { createRequire } = require('node:module');
 
 const distDir = path.join(__dirname, '..', 'dist');
-const CSS_FILE_COUNT = 15;
+// The bundle the styled entry must request: every stylesheet in css/ except
+// fading-circle.css (its spinner was removed), plus loaders.css itself.
+const BUNDLE = [
+  'loaders.css',
+  ...fs
+    .readdirSync(path.join(__dirname, '..', 'css'))
+    .filter((file) => file.endsWith('.css') && file !== 'fading-circle.css')
+    .map((file) => `../css/${file}`),
+].sort();
 
 function evaluateEntry(file, { globals = {}, transform = (code) => code } = {}) {
   const filename = path.join(distDir, file);
@@ -35,27 +43,41 @@ function evaluateEntry(file, { globals = {}, transform = (code) => code } = {}) 
 
 const envExpression = 'process.env.REACT_SPINKIT_NO_STYLES';
 const scenarios = [
-  { name: 'no `process` global (Vite dev, webpack 5)', globals: {}, css: CSS_FILE_COUNT },
-  { name: '`process` without the flag', globals: { process: { env: {} } }, css: CSS_FILE_COUNT },
-  { name: 'flag set at runtime', globals: { process: { env: { REACT_SPINKIT_NO_STYLES: '1' } } }, css: 0 },
+  { name: 'no `process` global (Vite dev, webpack 5)', globals: {}, css: BUNDLE },
+  { name: '`process` without the flag', globals: { process: { env: {} } }, css: BUNDLE },
+  { name: 'flag set at runtime', globals: { process: { env: { REACT_SPINKIT_NO_STYLES: '1' } } }, css: [] },
   {
     name: 'flag replaced at build time (DefinePlugin), no `process`',
     transform: (code) => code.replaceAll(envExpression, '"true"'),
-    css: 0,
+    css: [],
   },
   {
     name: '`process.env` replaced with {} (Vite build), no `process`',
     transform: (code) => code.replaceAll('process.env', '({})'),
-    css: CSS_FILE_COUNT,
+    css: BUNDLE,
   },
 ];
 
 assert.ok(fs.readFileSync(path.join(distDir, 'index.js'), 'utf8').includes(envExpression));
 
+// The built files must parse as ES2017, so bundlers with older parsers
+// (webpack 4's acorn 6) keep working, as they did with 3.0.0's ES5 build.
+const { parse } = require('acorn');
+const ECMA_VERSION = 2017;
+for (const file of fs.readdirSync(distDir).filter((f) => f.endsWith('.js'))) {
+  const code = fs.readFileSync(path.join(distDir, file), 'utf8');
+  try {
+    parse(code, { ecmaVersion: ECMA_VERSION, sourceType: 'script' });
+  } catch (error) {
+    assert.fail(`dist/${file} does not parse as ES${ECMA_VERSION}: ${error.message}`);
+  }
+}
+console.log(`ok - dist/*.js parse as ES${ECMA_VERSION}`);
+
 for (const scenario of scenarios) {
   const { Spinner, cssRequests } = evaluateEntry('index.js', scenario);
   assert.equal(typeof Spinner, 'function', `${scenario.name}: should export the component`);
-  assert.equal(cssRequests.length, scenario.css, `${scenario.name}: CSS files loaded`);
+  assert.deepEqual([...cssRequests].sort(), scenario.css, `${scenario.name}: CSS files requested`);
   console.log(`ok - index.js: ${scenario.name}: ${cssRequests.length} CSS files`);
 }
 
@@ -78,7 +100,7 @@ assert.equal(require('../dist/unstyled'), Spinner, 'unstyled entry should export
 
 for (const [name, info] of Object.entries(allSpinners)) {
   const html = renderToStaticMarkup(React.createElement(Spinner, { name }));
-  assert.ok(html.includes(info.className || name), `${name}: missing class in ${html}`);
+  assert.ok(html.includes(info.className ?? name), `${name}: missing class in ${html}`);
   assert.equal(html.match(/<div/g).length, info.divCount + 1, `${name}: wrong div count`);
 }
 

@@ -265,7 +265,7 @@ oracleProperty({
   law: {
     statement:
       'For every environment above, the styled entry and react-spinkit/dist/unstyled export the same component, and it renders a spinner.',
-    authority: 'test/index.test.tsx:104 "should export the same component from the unstyled entry point"; README, unstyled entry point.',
+    authority: 'test/index.test.tsx:114 "should export the same component from the unstyled entry point"; README, unstyled entry point.',
     limits: 'The component itself is the main oracle\'s (test/spinner.oracle.property.test.tsx).',
   },
   ...entryShared,
