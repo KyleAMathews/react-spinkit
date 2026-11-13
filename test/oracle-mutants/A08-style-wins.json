@@ -1,0 +1,8 @@
+{
+  "id": "A08-style-wins",
+  "source": "src/Spinner.tsx",
+  "find": "{ ...props.style, color: props.color }",
+  "replace": "{ color: props.color, ...props.style }",
+  "intent": "style.color wins over color",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

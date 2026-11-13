@@ -1,0 +1,10 @@
+{
+  "name": "react-spinkit-test-react-18",
+  "private": true,
+  "description": "React 18 for the oracle's second run: PropTypes are checked only on React 18 and earlier.",
+  "version": "0.0.0",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

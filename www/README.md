@@ -1,6 +1,16 @@
 # React Spinkit website
 
-This site is built using [Gatsby](https://github.com/gatsbyjs/gatsby)
+The demo site is a small [Vite](https://vite.dev) app that renders the built
+`react-spinkit` package from this workspace.
 
-To run locally / develop, first run `npm install` inside this directory
-and then run `gatsby develop` to start a hot reloading server.
+From the repository root:
+
+```console
+pnpm install
+pnpm build      # build the library first; the site imports dist/
+pnpm site:dev   # hot reloading dev server
+pnpm site:build # production build into www/dist
+```
+
+The site is deployed to GitHub Pages by `.github/workflows/pages.yml` on every
+push to `master`.

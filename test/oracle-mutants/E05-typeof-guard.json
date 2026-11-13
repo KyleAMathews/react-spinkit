@@ -1,0 +1,8 @@
+{
+  "id": "E05-typeof-guard",
+  "source": "src/index.ts",
+  "find": "try {\n  stylesDisabled = Boolean(process.env.REACT_SPINKIT_NO_STYLES);\n} catch {\n  // No `process` (or no readable `process.env`): load the styles.\n}",
+  "replace": "stylesDisabled = typeof process !== 'undefined' && Boolean(process.env.REACT_SPINKIT_NO_STYLES);",
+  "intent": "a typeof guard instead of try/catch: an unreadable process.env throws again",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

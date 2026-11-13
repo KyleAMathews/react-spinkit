@@ -1,0 +1,8 @@
+{
+  "id": "A17-fallback-circle",
+  "source": "src/Spinner.tsx",
+  "find": "spinnersByName.get('three-bounce')!",
+  "replace": "spinnersByName.get('circle')!",
+  "intent": "fall back to the wrong spinner",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

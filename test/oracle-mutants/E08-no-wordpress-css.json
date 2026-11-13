@@ -1,0 +1,8 @@
+{
+  "id": "E08-no-wordpress-css",
+  "source": "src/index.ts",
+  "find": "  require('../css/wordpress.css');\n",
+  "replace": "  require('../css/wave.css');\n",
+  "intent": "wordpress.css is never requested (wave.css twice)",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

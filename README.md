@@ -1,6 +1,8 @@
 react-spinkit
 =============
 
+[![CI](https://github.com/KyleAMathews/react-spinkit/actions/workflows/ci.yml/badge.svg)](https://github.com/KyleAMathews/react-spinkit/actions/workflows/ci.yml)
+
 A collection of loading indicators animated with CSS for React
 
 Currently I've ported all the spinner animations from
@@ -10,15 +12,21 @@ Currently I've ported all the spinner animations from
 ## Install
 
 ```console
-$ npm install react-spinkit --save
+$ npm install react-spinkit
+# or
+$ pnpm add react-spinkit
 ```
 
 ## Usage
 ```javascript
-var Spinner = require('react-spinkit');
+import Spinner from 'react-spinkit';
+// or: const Spinner = require('react-spinkit');
 
 <Spinner name='double-bounce' />
 ```
+
+TypeScript types are included. Prop types are available as `Spinner.SpinnerProps`,
+and spinner names as `Spinner.Name`.
 
 See more examples on the [demo page](http://kyleamathews.github.io/react-spinkit/).
 
@@ -34,9 +42,10 @@ some of the loaders.css spinners have a zero-sized parent div and extend outward
 from that (as you can see on the demos page). Regardless of this, they are all
 easily centerable with flexbox.
 
-## Webpack or Browserify is required
-Currently we only support Browserify and Webpack. If you'd like support
-for other build tools that also support requiring CSS, PRs are welcome.
+## A CSS-aware bundler is required
+The component `require()`s its CSS, so you need a bundler that can handle CSS
+imports from `node_modules`, such as Webpack, Vite, or Browserify. If you'd
+like support for other build tools, PRs are welcome.
 
 ## Fades in spinners after one second
 According to [research by Jakob Nielsen](http://www.nngroup.com/articles/response-times-3-important-limits/),
@@ -55,12 +64,39 @@ For example: `<Spinner fadeIn='half' />`.
 * **color**-programmatically set the color of the spinners; this can either be a
 hex value or a color word.
 
-## Server-side rendering
+## Server-side rendering and loading CSS yourself
 If you want to use this for server-side rendering, set
 `process.env.REACT_SPINKIT_NO_STYLES` in your server build environment,
 in webpack via `webpack.DefinePlugin`, or whatever is appropriate to your
 build process. This will skip the import of styles and allow evaluation of
-the SpinKit code in node.
+the SpinKit code in node. Any non-empty value counts as set, including
+`"false"` and `"0"`; leave it unset or empty to load the styles.
+
+To skip the bundled CSS entirely (for example in a server bundle that can't
+process CSS imports, or if you want to provide your own styles), import the
+unstyled entry point instead:
+
+```javascript
+import Spinner from 'react-spinkit/dist/unstyled';
+```
 
 ## Demo and documentation
-http://kyleamathews.github.io/react-spinkit/
+https://kyleamathews.github.io/react-spinkit/
+
+## Development
+This repo uses [pnpm](https://pnpm.io) (see `packageManager` in
+`package.json`; run `corepack enable` to get the right version) and Node 22+.
+
+```console
+$ pnpm install
+$ pnpm test        # Vitest + Testing Library
+$ pnpm lint        # ESLint
+$ pnpm typecheck   # TypeScript
+$ pnpm build       # tsc -> dist/ (CommonJS + .d.ts)
+$ pnpm test:dist   # smoke-test the built CommonJS entry point
+$ pnpm check       # all of the above
+$ pnpm site:dev    # run the demo site (www/) locally
+```
+
+To release: `pnpm version <patch|minor|major>`, `git push --follow-tags`,
+then `pnpm publish` (which runs `pnpm check` first).

@@ -1,0 +1,8 @@
+{
+  "id": "A06-swap-half-quarter",
+  "source": "src/Spinner.tsx",
+  "find": "['half', 'sk-fade-in-half-second'],\n  ['quarter', 'sk-fade-in-quarter-second'],",
+  "replace": "['half', 'sk-fade-in-quarter-second'],\n  ['quarter', 'sk-fade-in-half-second'],",
+  "intent": "half and quarter fade classes swapped",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

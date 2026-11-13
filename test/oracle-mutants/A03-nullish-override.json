@@ -1,0 +1,8 @@
+{
+  "id": "A03-nullish-override",
+  "source": "src/Spinner.tsx",
+  "find": "overrideSpinnerClassName || 'sk-spinner'",
+  "replace": "overrideSpinnerClassName ?? 'sk-spinner'",
+  "intent": "an empty override replaces sk-spinner with nothing",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

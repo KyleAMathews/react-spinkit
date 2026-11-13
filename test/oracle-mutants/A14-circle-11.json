@@ -1,0 +1,8 @@
+{
+  "id": "A14-circle-11",
+  "source": "src/spinners.ts",
+  "find": "circle: { className: 'sk-circle', divCount: 12 }",
+  "replace": "circle: { className: 'sk-circle', divCount: 11 }",
+  "intent": "circle renders 11 dots",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

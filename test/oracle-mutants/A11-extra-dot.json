@@ -1,0 +1,8 @@
+{
+  "id": "A11-extra-dot",
+  "source": "src/Spinner.tsx",
+  "find": "{ length: divCount }",
+  "replace": "{ length: divCount + 1 }",
+  "intent": "one dot too many",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

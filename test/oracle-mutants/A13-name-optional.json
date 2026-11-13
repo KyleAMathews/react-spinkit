@@ -1,0 +1,8 @@
+{
+  "id": "A13-name-optional",
+  "source": "src/Spinner.tsx",
+  "find": "name: PropTypes.string.isRequired,",
+  "replace": "name: PropTypes.string,",
+  "intent": "name={null} no longer warns",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

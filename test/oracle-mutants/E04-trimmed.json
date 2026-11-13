@@ -1,0 +1,8 @@
+{
+  "id": "E04-trimmed",
+  "source": "src/index.ts",
+  "find": "Boolean(process.env.REACT_SPINKIT_NO_STYLES)",
+  "replace": "Boolean(process.env.REACT_SPINKIT_NO_STYLES?.trim())",
+  "intent": "a whitespace-only flag counts as unset",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

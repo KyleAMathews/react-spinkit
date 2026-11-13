@@ -1,0 +1,8 @@
+{
+  "id": "A12-no-none-fadeIn",
+  "source": "src/Spinner.tsx",
+  "find": "'quarter', 'none'])",
+  "replace": "'quarter'])",
+  "intent": "PropTypes reject fadeIn='none'",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}

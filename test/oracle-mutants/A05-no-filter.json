@@ -1,0 +1,8 @@
+{
+  "id": "A05-no-filter",
+  "source": "src/Spinner.tsx",
+  "find": "      .filter(Boolean)\n      .join(' ');",
+  "replace": "      .join(' ');",
+  "intent": "false and undefined leak into the class list as words",
+  "author": "agent (Claude Code), 2026-11-12, designed from the code before reading the checks"
+}
